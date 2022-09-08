@@ -68,20 +68,16 @@ int get_rang_min(char c)
 */
 char * encrypt_source(const char *source, const char *cypher_key, const char *min, const char *maj)
 {
-	if(!source)
-	{
-		printf("\nLe texte source %s n'est pas renseigne, cryptage impossible\n",source);
+    char *target = NULL;
+    if(check_datas(cypher_key, source) == -1)
+    {
+        target = alloc_memory(1);
+		target[0] = '\0';
 		return NULL;
-	}
-	if(!cypher_key)
-	{
-		printf("\nLa clé de chiffrement non renseignee %s, cryptage impossible \n", cypher_key);
-		return NULL;
-	}
+    }
 	unsigned size_key = strlen(cypher_key);
 	char * src = NULL;
 	char * key = NULL;
-	char * target = NULL;
 
 	src = alloc_memory(strlen(source) + 1);
 	key = alloc_memory(strlen(cypher_key) + 1);
@@ -105,17 +101,12 @@ char * encrypt_source(const char *source, const char *cypher_key, const char *mi
 	{
 		if(src[i] >= 'a' && src[i] <= 'z' )
 		{
-			int p = get_rang_min(src[i]);
-			char r = key[i%(size_key)];
-			int q = get_rang_min(r);
-			int rang = (p - q + 26)%26;
+			int rang = (get_rang_min(src[i]) - get_rang_min(key[i%(size_key)]) + 26)%26;
 			target[i] = min[rang];
 		}
 		else if(src[i] >= 'A' && src[i] <= 'Z')
 		{
-			int p = get_rang_maj(src[i]);
-			int q = get_rang_min(key[i%(size_key)]);
-			int rang = (p - q + 26)%26;
+			int rang = (get_rang_maj(src[i]) - get_rang_min(key[i%(size_key)]) + 26)%26;
 			target[i] = maj[rang];
 		}
 		else

@@ -14,6 +14,29 @@
 #include "header.h"
 
 /**
+* \fn int check_datas(const char * cypher_key, const char * source)
+* \brief Fonction permettant de vérifier le contenu du texte clair ou chiffré source plus la clé de chiffremennt cypher_key
+*
+* \param[in] cypher_key : clé de chiffrement
+* \param[in] source : texte chiffrer à déchiffrer
+* \return int : 0 si le contenu est correct -1 sinon
+*/
+int check_datas(const char * cypher_key, const char * source)
+{
+	if(!source || strlen(source) == 0)
+	{
+        printf("\nLe texte chiffre %s n'est pas renseigne, cryptage/decryptage impossible\n",source);
+		return -1;
+	}
+	if(!cypher_key || strlen(cypher_key) == 0)
+	{
+		printf("\nLa cle de chiffrement non renseignee %s, cryptage/decryptage impossible \n", cypher_key);
+		return -1;
+	}
+	return 0;
+}
+
+/**
 * \fn char * decrypter(const char *cypher_key, const char * source)
 * \brief Fonction permettant de decrypter le texte crypté contenu dans le fichier source avec la clé de decryptage cypher_key
 *
@@ -25,29 +48,19 @@
 */
 char * decrypt_cypher(const char * cypher_key, const char * source, const char *min, const char *maj)
 {
-	if(!source || strlen(source) == 0)
-	{
-			printf("\nLe texte chiffre %s n'est pas renseigne, décryptage impossible\n",source);
-			char *target = NULL;
-			target = alloc_memory(1);
-			target[0] = '\0';
-			return target;
-	}
-	if(!cypher_key || strlen(cypher_key) == 0)
-	{
-		printf("\nLa cle de chiffrement non renseignee %s, décryptage impossible \n", cypher_key);
-		char *target = NULL;
-		target = alloc_memory(1);
+    char *target = NULL;
+    if(check_datas(cypher_key, source) == -1)
+    {
+        target = alloc_memory(1);
 		target[0] = '\0';
-		return target;
-	}
+		return NULL;
+    }
 
 	unsigned size_key = strlen(cypher_key);
 	char * src = NULL;
 	src = alloc_memory(strlen(source) + 1);
 	char * key = NULL;
 	key = alloc_memory(strlen(cypher_key) + 1);
-	char * target = NULL;
 	target = alloc_memory(strlen(source) + 1);
 	unsigned int i = 0;
 	while(*(source + i) != '\0')
@@ -68,17 +81,12 @@ char * decrypt_cypher(const char * cypher_key, const char * source, const char *
 	{
 		if(((int)(src[i]) >= (int)('a') && (int)(src[i]) <= (int)('z')))
 		{
-			int p = get_rang_min(src[i]);
-			char r = key[i%(size_key)];
-			int q = get_rang_min(r);
-			int rang = (p + q + 26)%26;
+			int rang = (get_rang_min(src[i]) + get_rang_min(key[i%(size_key)]) + 26)%26;
 			target[i] = min[rang];
 		}
 		else if(((int)(src[i]) >= (int)('A') && (int)(src[i]) <= (int)('Z')))
 		{
-			int p = get_rang_maj(src[i]);
-			int q = get_rang_min( key[i%(size_key)]);
-			int rang = (p + q + 26)%26;
+			int rang = (get_rang_maj(src[i]) + get_rang_min( key[i%(size_key)]) + 26)%26;
 			target[i] = maj[rang];
 		}
 		else

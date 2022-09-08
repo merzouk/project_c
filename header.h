@@ -45,4 +45,6 @@ void delete_file_source();
 
 void demo();
 
+int check_datas(const char * cypher_key, const char * source);
+
 #endif

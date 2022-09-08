@@ -98,7 +98,7 @@ void write_cypher_in_file(char *source, const char * pathFileName)
 
 char choose()
 {
-    int choix = ' ';
+    int choix;
     fflush(stdin);
     scanf("%d", &choix);
     return choix;
