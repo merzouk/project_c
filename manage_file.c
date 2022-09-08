@@ -48,6 +48,8 @@ char * read_source_from_file(const char *pathFileName)
     fread(text, sizeof(char), numbytes, textfile);
     fclose(textfile);
 
+    printf(text);
+
     return text;
 }
 
@@ -62,7 +64,7 @@ char * read_source_from_file(const char *pathFileName)
 */
 void write_cypher_in_file(char *source, const char * pathFileName)
 {
-    printf("Writing cypher text in file %s \n", pathFileName);
+    printf("\nWriting cypher text in file %s \n", pathFileName);
 	if(!pathFileName)
 	{
 		printf("Le fichier contenant le texte a chiffrer n'est pas renseigne %s ", pathFileName);
@@ -92,4 +94,30 @@ void write_cypher_in_file(char *source, const char * pathFileName)
    }
    fclose(pfile);
    printf("Ecriture dans le fichier %s s'est terminee avec succes ",pathFileName);
+}
+
+char choose()
+{
+    int choix = ' ';
+    fflush(stdin);
+    scanf("%d", &choix);
+    return choix;
+}
+
+void delete_file_source()
+{
+    const char *pathFileNameTexte = "F:/SECURITE/source.txt";
+    printf("Etes vous sur de vouloir supprimer le fichier %s \n", pathFileNameTexte);
+    printf("(1) pour oui et autre pour non : ");
+    if(choose() == 1)
+    {
+        if (remove(pathFileNameTexte) == 0)
+            {
+            printf("\nLe fichier %s est supprime avec succes.", pathFileNameTexte);
+        }
+        else
+        {
+            printf("\nLe fichier  %s n'est pas supprime.", pathFileNameTexte);
+        }
+    }
 }
