@@ -13,11 +13,6 @@
 
 #include "header.h"
 
-
-const char min_tt [26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y','z'};
-
-const char maj_tt [26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y','Z'};
-
 /**
 * \fn int get_rang_maj(char c)
 * \brief Fonction permettant de donner le rang dans l'alphabet d'un caractère c
@@ -25,11 +20,11 @@ const char maj_tt [26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
 * \param[in] c : le caractère dont on cherche le rang dans l'alphabet en lettre majiscule
 * \return int : le rang de la lettre majiscule dans l'alphabet
 */
-int get_rang_maj(char c)
+int get_rang_maj(char c, char *maj)
 {
 	for(int i = 0 ; i < 26 ; i++)
 	{
-		if(c == maj_tt[i])
+		if(c == maj[i])
 		{
 			return i;
 		}
@@ -44,11 +39,11 @@ int get_rang_maj(char c)
 * \param[in] c : le caractère dont on cherche le rang dans l'alphabet en lettre miniscule
 * \return int : le rang de la lettre miniscule dans l'alphabet
 */
-int get_rang_min(char c)
+int get_rang_min(char c, char *min)
 {
 	for(int i = 0 ; i < 26 ; i++)
 	{
-		if(c == min_tt[i])
+		if(c == min[i])
 		{
 			return i;
 		}
@@ -101,11 +96,11 @@ char * encrypt_source(const char *source, const char *cypher_key, const char *mi
 	{
 		if(src[i] >= 'a' && src[i] <= 'z' )
 		{
-			target[i] = min[(get_rang_min(src[i]) - get_rang_min(key[i%(size_key)]) + 26)%26];
+			target[i] = min[(get_rang_min(src[i], min) - get_rang_min(key[i%(size_key)], min) + 26)%26];
 		}
 		else if(src[i] >= 'A' && src[i] <= 'Z')
 		{
-			target[i] = maj[(get_rang_maj(src[i]) - get_rang_min(key[i%(size_key)]) + 26)%26];
+			target[i] = maj[(get_rang_maj(src[i], maj) - get_rang_min(key[i%(size_key)], min) + 26)%26];
 		}
 		else
 		{

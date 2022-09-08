@@ -84,7 +84,7 @@ void menu(const char *min, const char *maj)
 					delete_file_source();
 					break;
 				case 4 :
-					demo();
+					demo(min, maj);
 					break;
        		}
     	}while (menu!=0);
