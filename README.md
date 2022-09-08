@@ -28,13 +28,19 @@ On souhaite à partir d’un fichier source, faire en sorte de le crypter en uti
 Cet algorithme repose sur un mot (le perroquet) qui permet de crypter en calculant la différence ASCII caractère par caractère.
 Illustration du principe du perroquet :
 
+```
 Mot source à crypter : Olivier
+```
 
+```
 Perroquet : abcd
+```
 
+```
 Résultat en calcul ascii
 
 (‘O’-‘a’)(‘l’-‘b’)(‘i’-‘c’)(‘v’-‘d’)(‘i’-‘a’)(‘e’-‘b’)(‘r’-‘c’)
+```
 
 # Résultat
 
