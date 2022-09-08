@@ -36,9 +36,10 @@ Mot source à crypter : Olivier
 Perroquet : abcd
 ```
 
-```
-Résultat en calcul ascii
 
+# Résultat en calcul ascii : 
+
+```
 (‘O’-‘a’)(‘l’-‘b’)(‘i’-‘c’)(‘v’-‘d’)(‘i’-‘a’)(‘e’-‘b’)(‘r’-‘c’)
 ```
 
