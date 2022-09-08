@@ -57,42 +57,24 @@ char * decrypt_cypher(const char * cypher_key, const char * source, const char *
     }
 
 	unsigned size_key = strlen(cypher_key);
-	char * src = NULL;
-	src = alloc_memory(strlen(source) + 1);
-	char * key = NULL;
-	key = alloc_memory(strlen(cypher_key) + 1);
 	target = alloc_memory(strlen(source) + 1);
 	unsigned int i = 0;
-	while(*(source + i) != '\0')
+	for(i = 0 ; source[i] != '\0' ; i++)
 	{
-		src[i] = *(source +i);
-		i++;
-	}
-	src[strlen(source)] = '\0';
-	i = 0;
-	while(*(cypher_key + i) != '\0')
-	{
-		key[i] = *(cypher_key +i);
-		i++;
-	}
-	key[strlen(cypher_key)] = '\0';
-
-	for(i = 0 ; src[i] != '\0' ; i++)
-	{
-		if(((int)(src[i]) >= (int)('a') && (int)(src[i]) <= (int)('z')))
+		if(((int)(source[i]) >= (int)('a') && (int)(source[i]) <= (int)('z')))
 		{
-			target[i] = min[(get_rang_min(src[i], min) + get_rang_min(key[i%(size_key)], min) + 26)%26];
+			target[i] = min[(get_rang_min(source[i], min) + get_rang_min(cypher_key[i%(size_key)], min) + 26)%26];
 		}
-		else if(((int)(src[i]) >= (int)('A') && (int)(src[i]) <= (int)('Z')))
+		else if(((int)(source[i]) >= (int)('A') && (int)(source[i]) <= (int)('Z')))
 		{
-			target[i] = maj[(get_rang_maj(src[i], maj) + get_rang_min( key[i%(size_key)], min) + 26)%26];
+			target[i] = maj[(get_rang_maj(source[i], maj) + get_rang_min( cypher_key[i%(size_key)], min) + 26)%26];
 		}
 		else
 		{
-			target[i] = src[i];
+			target[i] = source[i];
 		}
 	}
-	target[strlen(src)] = '\0';
+	target[strlen(source)] = '\0';
 	return target;
 }
 

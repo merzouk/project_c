@@ -20,7 +20,7 @@
 * \param[in] c : le caractère dont on cherche le rang dans l'alphabet en lettre majiscule
 * \return int : le rang de la lettre majiscule dans l'alphabet
 */
-int get_rang_maj(char c, char *maj)
+int get_rang_maj(char c, const char *maj)
 {
 	for(int i = 0 ; i < 26 ; i++)
 	{
@@ -39,7 +39,7 @@ int get_rang_maj(char c, char *maj)
 * \param[in] c : le caractère dont on cherche le rang dans l'alphabet en lettre miniscule
 * \return int : le rang de la lettre miniscule dans l'alphabet
 */
-int get_rang_min(char c, char *min)
+int get_rang_min(char c, const char *min)
 {
 	for(int i = 0 ; i < 26 ; i++)
 	{
@@ -71,43 +71,26 @@ char * encrypt_source(const char *source, const char *cypher_key, const char *mi
 		return NULL;
     }
 	unsigned size_key = strlen(cypher_key);
-	char * src = NULL;
-	char * key = NULL;
 
-	src = alloc_memory(strlen(source) + 1);
-	key = alloc_memory(strlen(cypher_key) + 1);
 	target = alloc_memory(strlen(source) + 1);
 
 	unsigned int i = 0;
-	while(i < strlen(source))
+	for(i = 0 ; source[i] != '\0' ; i++)
 	{
-		src[i] = *(source +i);
-		i++;
-	}
-	src[strlen(source)] = '\0';
-	i = 0;
-	while(i < strlen(cypher_key))
-	{
-		key[i] = *(cypher_key +i);
-		i++;
-	}
-	key[strlen(cypher_key)] = '\0';
-	for(i = 0 ; src[i] != '\0' ; i++)
-	{
-		if(src[i] >= 'a' && src[i] <= 'z' )
+		if(source[i] >= 'a' && source[i] <= 'z' )
 		{
-			target[i] = min[(get_rang_min(src[i], min) - get_rang_min(key[i%(size_key)], min) + 26)%26];
+			target[i] = min[(get_rang_min(source[i], min) - get_rang_min(cypher_key[i%(size_key)], min) + 26)%26];
 		}
-		else if(src[i] >= 'A' && src[i] <= 'Z')
+		else if(source[i] >= 'A' && source[i] <= 'Z')
 		{
-			target[i] = maj[(get_rang_maj(src[i], maj) - get_rang_min(key[i%(size_key)], min) + 26)%26];
+			target[i] = maj[(get_rang_maj(source[i], maj) - get_rang_min(cypher_key[i%(size_key)], min) + 26)%26];
 		}
 		else
 		{
-			target[i] = src[i];
+			target[i] = source[i];
 		}
 	}
-	target[strlen(src)] = '\0';
+	target[strlen(source)] = '\0';
 	return target;
 }
 

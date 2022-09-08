@@ -33,13 +33,13 @@ char * choose_cypher_key(int choose);
 
 char *alloc_memory(int size);
 
-int get_rang_maj(char c, char *maj);
+int get_rang_maj(char c, const char *maj);
 
 void crypt_containt_file(const char *min, const char *maj);
 
 void decrypt_containt_file(const char *min, const char *maj);
 
-int get_rang_min(char c, char * min);
+int get_rang_min(char c, const char * min);
 
 void delete_file_source();
 
