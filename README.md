@@ -24,6 +24,8 @@ Résultat en calcul ascii
 Résultat
 Concaténation des codes ASCII
 
+Thème :
+
 L’utilisateur devra lui-même définir son propre perroquet.
 Celui qui crypte et qui décrypte doit donc connaître le mot (ou la phrase) du « perroquet ». On prévoira donc un fichier (« peroq.def ») contenant la chaine de caractères du perroquet.
 On disposera de 2 fichiers.
