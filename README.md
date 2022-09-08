@@ -20,11 +20,15 @@ Cet algorithme repose sur un mot (le perroquet) qui permet de crypter en calcula
 Illustration du principe du perroquet :
 
 Mot source à crypter : Olivier
+
 Perroquet abcd
+
 Résultat en calcul ascii
+
 (‘O’-‘a’)(‘l’-‘b’)(‘i’-‘c’)(‘v’-‘d’)(‘i’-‘a’)(‘e’-‘b’)(‘r’-‘c’)
 
 Résultat
+
 Concaténation des codes ASCII
 
 
