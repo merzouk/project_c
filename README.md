@@ -11,6 +11,7 @@ génération d'un zip : make zip
 
 exécution du projet : ./manage_cypher
 
+Thème :
 
 On souhaite à partir d’un fichier source, faire en sorte de le crypter en utilisant l’algorithme du « perroquet ».
 Cet algorithme repose sur un mot (le perroquet) qui permet de crypter en calculant la différence ASCII caractère par caractère.
@@ -24,7 +25,7 @@ Résultat en calcul ascii
 Résultat
 Concaténation des codes ASCII
 
-Thème :
+
 
 L’utilisateur devra lui-même définir son propre perroquet.
 Celui qui crypte et qui décrypte doit donc connaître le mot (ou la phrase) du « perroquet ». On prévoira donc un fichier (« peroq.def ») contenant la chaine de caractères du perroquet.
