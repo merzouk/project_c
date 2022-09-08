@@ -101,13 +101,11 @@ char * encrypt_source(const char *source, const char *cypher_key, const char *mi
 	{
 		if(src[i] >= 'a' && src[i] <= 'z' )
 		{
-			int rang = (get_rang_min(src[i]) - get_rang_min(key[i%(size_key)]) + 26)%26;
-			target[i] = min[rang];
+			target[i] = min[(get_rang_min(src[i]) - get_rang_min(key[i%(size_key)]) + 26)%26];
 		}
 		else if(src[i] >= 'A' && src[i] <= 'Z')
 		{
-			int rang = (get_rang_maj(src[i]) - get_rang_min(key[i%(size_key)]) + 26)%26;
-			target[i] = maj[rang];
+			target[i] = maj[(get_rang_maj(src[i]) - get_rang_min(key[i%(size_key)]) + 26)%26];
 		}
 		else
 		{

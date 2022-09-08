@@ -81,13 +81,11 @@ char * decrypt_cypher(const char * cypher_key, const char * source, const char *
 	{
 		if(((int)(src[i]) >= (int)('a') && (int)(src[i]) <= (int)('z')))
 		{
-			int rang = (get_rang_min(src[i]) + get_rang_min(key[i%(size_key)]) + 26)%26;
-			target[i] = min[rang];
+			target[i] = min[(get_rang_min(src[i]) + get_rang_min(key[i%(size_key)]) + 26)%26];
 		}
 		else if(((int)(src[i]) >= (int)('A') && (int)(src[i]) <= (int)('Z')))
 		{
-			int rang = (get_rang_maj(src[i]) + get_rang_min( key[i%(size_key)]) + 26)%26;
-			target[i] = maj[rang];
+			target[i] = maj[(get_rang_maj(src[i]) + get_rang_min( key[i%(size_key)]) + 26)%26];
 		}
 		else
 		{
