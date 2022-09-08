@@ -18,7 +18,7 @@
 * \brief Fonction permettant de donner le rang dans l'alphabet d'un caractère c
 *
 * \param[in] c : le caractère dont on cherche le rang dans l'alphabet en lettre majiscule
-* \param[in] min : l'alphabet en lettre majiscule
+* \param[in] maj : l'alphabet en lettre majiscule
 * \return int : le rang de la lettre majiscule dans l'alphabet
 */
 int get_rang_maj(char c, const char *maj)
