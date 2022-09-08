@@ -6,6 +6,8 @@ compilation via le makefile : make
 
 suppression des fichiers de lien et de l'exécutable : make mrproper
 
+suppression des fichiers .o : make clean
+
 génération d'un zip : make zip
 
 
