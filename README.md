@@ -117,5 +117,6 @@ Dans le menu nous avons 6 choix :
 # Note
 
 ```
-Les chemins des différents fichiers sont renseignés dans le fichier file.h, ils peuvent être modifiés à volonté.
+Dans le cas 1 et 2, les chemins des différents fichiers sont renseignés dans le fichier file.h. 
+Ils peuvent être modifiés à volonté.
 ```
