@@ -122,18 +122,17 @@ void decryptage_saisie_cle(const char *min, const char *maj, const char *pathFil
 }
 
 /**
-* \fn int main (void)
+* \fn void decrypt_containt_file(const char *min, const char *maj, const char *pathFileNameTexte,  const char *pathFileNameCypherKey, const char *pathFileNameCypher)
 * \brief Entrée de la fonction de decryptage.
 * \param[in] min : alphabet au miniscule
 * \param[in] maj : alphabet au format majiscule
-* \return EXIT_SUCCESS - Arrêt normal du programme.
-* \return EXIT_FAILURE - Arrêt anormal du programme.
+* \param[in] pathFileNameTexte : chemin vers le fichier contenant le texte clair
+* \param[in] cypher_key : la clé de dechiffrement saisie manuellement
+* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffré
+* \return void : sortie sans retour.
 */
-void decrypt_containt_file(const char *min, const char *maj)
+void decrypt_containt_file(const char *min, const char *maj, const char *pathFileNameTexte,  const char *pathFileNameCypherKey, const char *pathFileNameCypher)
 {
-   const char *pathFileNameTexte = "F:/SECURITE/source.txt";
-   const char *pathFileNameCypherKey = "F:/SECURITE/peroq.def";
-   const char *pathFileNameCypher = "F:/SECURITE/dest.crt";
    decryptage(min, maj, pathFileNameTexte, pathFileNameCypherKey, pathFileNameCypher);
 }
 

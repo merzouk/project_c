@@ -35,9 +35,9 @@ char *alloc_memory(int size);
 
 int get_rang_maj(char c, const char *maj);
 
-void crypt_containt_file(const char *min, const char *maj);
+void crypt_containt_file(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypherKey, const char *pathFileNameCypher);
 
-void decrypt_containt_file(const char *min, const char *maj);
+void decrypt_containt_file(const char *min, const char *maj, const char *pathFileNameTexte,  const char *pathFileNameCypherKey, const char *pathFileNameCypher);
 
 int get_rang_min(char c, const char * min);
 
@@ -47,14 +47,18 @@ void demo();
 
 int check_datas(const char * cypher_key, const char * source);
 
-void saisie_cle_chiffrement(const char * min, const char * maj);
+void saisie_cle_dechiffrement(const char * min, const char * maj, const char *pathFileNameTexte, const char *pathFileNameCypher);
 
-void saisie_cle_dechiffrement(const char * min, const char * maj);
+void saisie_cle_chiffrement(const char * min, const char * maj, const char *pathFileNameTexte,  const char *pathFileNameCypher);
 
 void crypt_containt_file_key(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char * cypher_key);
 
 void decryptage_saisie_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char *cypher_key);
 
 void decrypt_containt_file_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char * cypher_key);
+
+void saisie_fichiers_chiffrement(const char * min, const char * maj);
+
+void saisie_fichiers_dechiffrement(const char * min, const char * maj);
 
 #endif

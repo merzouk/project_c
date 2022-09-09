@@ -59,8 +59,10 @@ void menu(const char *min, const char *maj)
        	    printf("2. Dechiffrer un texte  \n");
        	    printf("3. Chiffrer par saisi de cle \n");
 			printf("4. Dechiffrer par saisi de cle \n");
-       	    printf("5. Supprimer le fichier source \n");
-			printf("6. Voir une demo \n");
+			printf("5. Chiffrer par saisi des paths des fichiers \n");
+			printf("6. Dechiffrer par saisi des paths des fichiers \n");
+       	    printf("7. Supprimer le fichier source \n");
+			printf("8. Voir une demo \n");
 
        	    printf("0. Quitter \n");
        	    printf("Votre choix : ");
@@ -79,21 +81,27 @@ void menu(const char *min, const char *maj)
 				    printf("\nFin exécution du programme de cryptage de données \n");
 					break;
 				case 1 :
-					crypt_containt_file(min, maj);
+					crypt_containt_file(min, maj, pathFileNameTexte, pathFileNameCypherKey, pathFileNameCypher);
 					break;
 				case 2 :
-					decrypt_containt_file(min, maj);
+					decrypt_containt_file(min, maj, pathFileNameTexte, pathFileNameCypherKey, pathFileNameCypher);
 					break;
                 case 3:
-                    saisie_cle_chiffrement(min, maj);
+                    saisie_cle_chiffrement(min, maj, pathFileNameTexte, pathFileNameCypher);
                     break;
                 case 4:
-                    saisie_cle_dechiffrement(min, maj);
+                    saisie_cle_dechiffrement(min, maj, pathFileNameTexte, pathFileNameCypher);
                     break;
-                 case 5:
-					delete_file_source(pathToFile);
+                case 5:
+                    saisie_fichiers_chiffrement(min, maj);
+                    break;
+                  case 6:
+                    saisie_fichiers_dechiffrement(min, maj);
+                    break;
+                 case 7:
+					delete_file_source(pathFileNameTexte);
 					break;
-                case 6:
+                case 8:
 					demo(min, maj);
 					break;
        		}
