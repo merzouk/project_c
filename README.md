@@ -80,7 +80,7 @@ De plus, on prévoira de supprimer la source après cryptage de telle manière �
 
 # Menu
 
-Dans le menu nous avons 6 choix : 
+Dans le menu nous avons 8 choix : 
 
 ```
 1. Chiffrer un texte
