@@ -23,7 +23,7 @@ OBJ = $(SRC:.c=.o)
 all: $(PROG)
 
 $(PROG): $(OBJ)
-	@echo "Fin build des fichiers .o et génération du fichier executable ==> \"$(PROG)\" : " 
+	@echo "Fin build des fichiers .o et generation du fichier executable ==> \"$(PROG)\" : " 
 	$(CC) -o $@  $^ 
 
 %.o : %.c
@@ -38,5 +38,5 @@ mrproper: clean
 	$(DELETE) -rf $(PROG) $(ARCHIVE)
 
 zip:
-	@echo "Génération du fichier archive \"$(ARCHIVE)\" : " 
+	@echo "Generation du fichier archive \"$(ARCHIVE)\" : " 
 	tar -cvzf $(ARCHIVE) $(TARGET_ARCHIVE) 

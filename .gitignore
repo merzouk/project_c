@@ -3,3 +3,7 @@ bin/
 obj/
 *.depend
 *.layout
+*.o
+*.exe
+manage_cypher
+
