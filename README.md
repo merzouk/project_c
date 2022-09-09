@@ -96,8 +96,8 @@ Dans le menu nous avons 6 choix :
 # Détails des choix
 
 ```
-1. Un fichier nommé ** source.txt ** contenant le texte clair et un fichier ** peroq.def ** contenant la ** clé ** 
-   ** de chiffreement ** sont lus et le chiffré est déposé dans le fichier **dest.crt**
+1. Un fichier nommé source.txt contenant le texte clair et un fichier peroq.def contenant la clé  
+   de chiffreement sont lus et le chiffré est déposé dans le fichier **dest.crt**
 
 2. Un fichier nommé dest.crt contenant le texte chiffré et un fichier peroq.def contenant la clé 
    de déchiffreement sont lus et le déchiffré est déposé dans le fichier source.txt
