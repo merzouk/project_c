@@ -47,4 +47,14 @@ void demo();
 
 int check_datas(const char * cypher_key, const char * source);
 
+void saisie_cle_chiffrement(const char * min, const char * maj);
+
+void saisie_cle_dechiffrement(const char * min, const char * maj);
+
+void crypt_containt_file_key(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char * cypher_key);
+
+void decryptage_saisie_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char *cypher_key);
+
+void decrypt_containt_file_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char * cypher_key);
+
 #endif

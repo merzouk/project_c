@@ -103,6 +103,25 @@ void decryptage(const char *min, const char *maj, const char *pathFileNameTexte,
 }
 
 /**
+* \fn void cryptage_saisie_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypherKey, const char *cypher_key)
+* \brief Fonction permettant l'entré dans le menu de decryptage le texte chiffré par sais de la cle
+* \param[in] min : alphabet au miniscule
+* \param[in] maj : alphabet au format majiscule
+* \param[in] pathFileNameTexte : chemin vers le fichier contenant le texte clair
+* \param[in] cypher_key : la clé de dechiffrement saisie manuellement
+* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffré
+* \return void : sortie sans retour.
+*/
+void decryptage_saisie_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char *cypher_key)
+{
+   char * cypher = NULL;
+   cypher = read_source_from_file(pathFileNameCypher);
+   char * clair = decrypt_cypher(cypher_key, cypher, min, maj);
+   printf("clair = %s ", clair);
+   write_cypher_in_file(clair, pathFileNameTexte);
+}
+
+/**
 * \fn int main (void)
 * \brief Entrée de la fonction de decryptage.
 * \param[in] min : alphabet au miniscule
@@ -116,6 +135,21 @@ void decrypt_containt_file(const char *min, const char *maj)
    const char *pathFileNameCypherKey = "F:/SECURITE/peroq.def";
    const char *pathFileNameCypher = "F:/SECURITE/dest.crt";
    decryptage(min, maj, pathFileNameTexte, pathFileNameCypherKey, pathFileNameCypher);
+}
+
+/**
+* \fn int main (void)
+* \brief Entrée de la fonction de decryptagepar sais de cle.
+* \param[in] min : alphabet au miniscule
+* \param[in] maj : alphabet au format majiscule
+* \param[in] pathFileNameTexte : chemin vers le fichier contenant le texte clair
+* \param[in] cypher_key : la clé de dechiffrement saisie manuellement
+* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffré
+* \return void - Arrêt normal du programme.
+*/
+void decrypt_containt_file_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char * cypher_key)
+{
+   decryptage_saisie_cle(min, maj, pathFileNameTexte, pathFileNameCypher, cypher_key);
 }
 
 

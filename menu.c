@@ -31,7 +31,7 @@
 */
 char check_value(int choose)
 {
-	if(choose >= 0 && choose <= 4)
+	if(choose >= 0 && choose <= 6)
 	{
 		return 'O';
 	}
@@ -56,8 +56,11 @@ void menu(const char *min, const char *maj)
 
        	    printf("1. Chiffrer un texte\n");
        	    printf("2. Dechiffrer un texte  \n");
-       	    printf("3. Supprimer le fichier source \n");
-			printf("4. Voir une demo \n");
+       	    printf("3. Chiffrer par saisi de cle \n");
+			printf("4. Dechiffrer par saisi de cle \n");
+       	    printf("5. Supprimer le fichier source \n");
+			printf("6. Voir une demo \n");
+
        	    printf("0. Quitter \n");
        	    printf("Votre choix : ");
 
@@ -80,10 +83,16 @@ void menu(const char *min, const char *maj)
 				case 2 :
 					decrypt_containt_file(min, maj);
 					break;
-                case 3 :
+                case 3:
+                    saisie_cle_chiffrement(min, maj);
+                    break;
+                case 4:
+                    saisie_cle_dechiffrement(min, maj);
+                    break;
+                 case 5:
 					delete_file_source();
 					break;
-				case 4 :
+                case 6:
 					demo(min, maj);
 					break;
        		}

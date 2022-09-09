@@ -123,6 +123,27 @@ void cryptage(const char *min, const char *maj, const char *pathFileNameTexte, c
 }
 
 /**
+* \fn void cryptage_saisie_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypherKey, const char *cypher_key)
+* \brief Fonction permettant l'entré dans le menu de decryptage le texte chiffré
+* \param[in] min : alphabet au miniscule
+* \param[in] maj : alphabet au format majiscule
+* \param[in] pathFileNameTexte : chemin vers le fichier contenant le texte clair
+* \param[in] cypher_key : la clé de chiffrement saisie manuellement
+* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffré
+* \return void : sortie sans retour.
+*/
+void cryptage_saisie_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char *cypher_key)
+{
+    char * clair = NULL;
+    clair = read_source_from_file(pathFileNameTexte);
+    printf("\n\nLa Cle de chiffremment = %s \ntexte clair = %s\n", cypher_key, clair);
+	char * cypher = encrypt_source(clair, cypher_key, min, maj);
+	printf("\nLe chiffre = %s   \n", cypher);
+
+    write_cypher_in_file(cypher, pathFileNameCypher);
+}
+
+/**
 * \fn void crypt_containt_file(const char *min, const char *maj)
 * \brief Entrée de la fonction de cryptage.
 * \param[in] min : alphabet au miniscule
@@ -138,3 +159,19 @@ void crypt_containt_file(const char *min, const char *maj)
    const char *pathFileNameCypher = "F:/SECURITE/dest.crt";
    cryptage(min, maj, pathFileNameTexte, pathFileNameCypherKey, pathFileNameCypher);
 }
+
+/**
+* \fn void crypt_containt_file_key(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypherKey, const char * cypher_key)
+* \brief Entrée de la fonction de cryptage avec saisie manuelle de la cle.
+* \param[in] min : alphabet au miniscule
+* \param[in] maj : alphabet au format majiscule
+* \param[in] pathFileNameTexte : chemin vers le fichier contenant le texte clair
+* \param[in] cypher_key : la clé de chiffrement saisie manuellement
+* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffré
+* \return void -
+*/
+void crypt_containt_file_key(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char * cypher_key)
+{
+   cryptage_saisie_cle(min, maj, pathFileNameTexte, pathFileNameCypher, cypher_key);
+}
+
