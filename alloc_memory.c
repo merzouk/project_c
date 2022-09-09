@@ -29,7 +29,7 @@ char *alloc_memory(int size)
 	tab = (char*) calloc(size, sizeof(char));
 	if(tab == NULL)
 	{
-		printf("Allocation dynamique est terminée par un échèc \n");
+		printf("Allocation dynamique est terminée par un echec \n");
 		return NULL;
 	}
 	return tab;

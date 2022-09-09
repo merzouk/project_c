@@ -81,7 +81,7 @@ void menu(const char *min, const char *maj)
        	    switch(menu)
        		{
 				case 0 :
-				    printf("\nFin exécution du programme de cryptage de données \n");
+				    printf("\nFin execution du programme de cryptage de donnees \n");
 					break;
 				case 1 :
 					crypt_containt_file(min, maj, pathFileNameTexte, pathFileNameCypherKey, pathFileNameCypher);

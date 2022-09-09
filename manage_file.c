@@ -25,8 +25,6 @@ char * read_source_from_file(const char *pathFileName)
     FILE    *textfile;
     char    *text;
     long    numbytes;
-
-    printf("reading file containt %s \n", pathFileName);
 	if(!pathFileName)
 	{
 		printf("Le fichier contenant le texte à chiffrer n'est pas renseigné %s ", pathFileName);
@@ -47,8 +45,6 @@ char * read_source_from_file(const char *pathFileName)
 
     fread(text, sizeof(char), numbytes, textfile);
     fclose(textfile);
-
-    printf(text);
 
     return text;
 }

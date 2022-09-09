@@ -51,11 +51,8 @@ char * decrypt_cypher(const char * cypher_key, const char * source, const char *
     char *target = NULL;
     if(check_datas(cypher_key, source) == -1)
     {
-        target = alloc_memory(1);
-		target[0] = '\0';
 		return NULL;
     }
-
 	unsigned size_key = strlen(cypher_key);
 	target = alloc_memory(strlen(source) + 1);
 	unsigned int i = 0;

@@ -68,7 +68,6 @@ char * encrypt_source(const char *source, const char *cypher_key, const char *mi
     char *target = NULL;
     if(check_datas(cypher_key, source) == -1)
     {
-        target = alloc_memory(1);
 		return NULL;
     }
 	unsigned size_key = strlen(cypher_key);
