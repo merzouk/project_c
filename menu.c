@@ -14,6 +14,7 @@
 */
 
 #include "header.h"
+#include "file.h"
 
 /**
 * \fn void mmenu (void)
@@ -90,7 +91,7 @@ void menu(const char *min, const char *maj)
                     saisie_cle_dechiffrement(min, maj);
                     break;
                  case 5:
-					delete_file_source();
+					delete_file_source(pathToFile);
 					break;
                 case 6:
 					demo(min, maj);

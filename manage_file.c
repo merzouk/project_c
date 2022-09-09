@@ -104,20 +104,51 @@ char choose()
     return choix;
 }
 
-void delete_file_source()
+/**
+* \fn int exists_file(const char *pathFileName)
+* \brief Fonction permettant de verifier si un fichier existe ou pas
+*
+* \param[in] pathFileName : fichier vers le fichier
+* \return void : sortie sans retour.
+*/
+int exists_file(const char *pathFileName)
 {
-    const char *pathFileNameTexte = "F:/SECURITE/source.txt";
+    FILE * fichier = fopen(pathFileName, "r+");
+    if (fichier == NULL)
+    {
+        printf("Le fichier %s n\'exixte pas", pathFileName);
+        return 1;
+    }
+    else
+    {
+        fclose(fichier);
+        return 0;
+     }
+}
+
+/**
+* \fn void delete_file_source(const char *pathFileNameTexte)
+* \brief Fonction permettant de supprmer le fichier mis en parametre
+*
+* \param[in] pathFileNameTexte : fichier a supprimer
+* \return void : sortie sans retour.
+*/
+void delete_file_source(const char *pathFileNameTexte)
+{
     printf("Etes vous sur de vouloir supprimer le fichier %s \n", pathFileNameTexte);
     printf("(1) pour oui et autre nombre pour non : ");
     if(choose() == 1)
     {
-        if (remove(pathFileNameTexte) == 0)
-            {
-            printf("\nLe fichier %s est supprime avec succes.", pathFileNameTexte);
-        }
-        else
+        if(exists_file(pathFileNameTexte) == 0)
         {
-            printf("\nLe fichier  %s n'est pas supprime.", pathFileNameTexte);
+            if (remove(pathFileNameTexte) == 0)
+            {
+                printf("\nLe fichier %s est supprime avec succes.", pathFileNameTexte);
+            }
+            else
+            {
+                printf("\nLe fichier  %s n'est pas supprime.", pathFileNameTexte);
+            }
         }
     }
 }

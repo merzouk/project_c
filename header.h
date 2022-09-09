@@ -41,7 +41,7 @@ void decrypt_containt_file(const char *min, const char *maj);
 
 int get_rang_min(char c, const char * min);
 
-void delete_file_source();
+void delete_file_source(const char *pathFileNameTexte);
 
 void demo();
 
