@@ -95,8 +95,7 @@ void decryptage(const char *min, const char *maj, const char *pathFileNameTexte,
    cypher = read_source_from_file(pathFileNameCypher);
    cypher_key = read_source_from_file(pathFileNameCypherKey);
    char * clair = decrypt_cypher(cypher_key, cypher, min, maj);
-   if(clair)
-        write_cypher_in_file(clair, pathFileNameTexte);
+   write_cypher_in_file(clair, pathFileNameTexte);
 }
 
 /**
