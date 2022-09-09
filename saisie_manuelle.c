@@ -29,7 +29,6 @@ void saisie_cle_chiffrement(const char * min, const char * maj, const char *path
     char cypher_key[100];
     printf("Votre cle pour chiffrer  ? ");
     scanf("%s", cypher_key);
-    printf("%s ",cypher_key);
     crypt_containt_file_key(min, maj, pathFileNameTexte, pathFileNameCypher, cypher_key);
 }
 
@@ -49,7 +48,6 @@ void saisie_cle_dechiffrement(const char * min, const char * maj, const char *pa
     char cypher_key[100];
     printf("Votre cle pour dechiffrer  ? ");
     scanf("%s", cypher_key);
-    printf("%s ",cypher_key);
     decrypt_containt_file_cle(min, maj, pathFileNameTexte, pathFileNameCypher, cypher_key);
 }
 

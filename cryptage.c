@@ -69,13 +69,10 @@ char * encrypt_source(const char *source, const char *cypher_key, const char *mi
     if(check_datas(cypher_key, source) == -1)
     {
         target = alloc_memory(1);
-		target[0] = '\0';
 		return NULL;
     }
 	unsigned size_key = strlen(cypher_key);
-
 	target = alloc_memory(strlen(source) + 1);
-
 	unsigned int i = 0;
 	for(i = 0 ; source[i] != '\0' ; i++)
 	{
@@ -110,16 +107,11 @@ void cryptage(const char *min, const char *maj, const char *pathFileNameTexte, c
 {
    char * clair = NULL;
    char * cypher_key = NULL;
-
    clair = read_source_from_file(pathFileNameTexte);
-
    cypher_key = read_source_from_file(pathFileNameCypherKey);
-
-    printf("\n\nLa Cle de chiffremment = %s \ntexte clair = %s\n", cypher_key, clair);
-	char * cypher = encrypt_source(clair, cypher_key, min, maj);
-	printf("\nLe chiffre = %s   \n", cypher);
-
-    write_cypher_in_file(cypher, pathFileNameCypher);
+   char * cypher = encrypt_source(clair, cypher_key, min, maj);
+   if(cypher)
+        write_cypher_in_file(cypher, pathFileNameCypher);
 }
 
 /**
@@ -136,11 +128,9 @@ void cryptage_saisie_cle(const char *min, const char *maj, const char *pathFileN
 {
     char * clair = NULL;
     clair = read_source_from_file(pathFileNameTexte);
-    printf("\n\nLa Cle de chiffremment = %s \ntexte clair = %s\n", cypher_key, clair);
 	char * cypher = encrypt_source(clair, cypher_key, min, maj);
-	printf("\nLe chiffre = %s   \n", cypher);
-
-    write_cypher_in_file(cypher, pathFileNameCypher);
+    if(cypher)
+        write_cypher_in_file(cypher, pathFileNameCypher);
 }
 
 /**

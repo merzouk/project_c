@@ -37,7 +37,7 @@
 */
 char check_value(int choose)
 {
-	if(choose >= 0 && choose <= 6)
+	if(choose >= 0 && choose <= 8)
 	{
 		return 'O';
 	}

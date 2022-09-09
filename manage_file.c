@@ -64,7 +64,6 @@ char * read_source_from_file(const char *pathFileName)
 */
 void write_cypher_in_file(char *source, const char * pathFileName)
 {
-    printf("\nWriting cypher text in file %s \n", pathFileName);
 	if(!pathFileName)
 	{
 		printf("Le fichier contenant le texte a chiffrer n'est pas renseigne %s ", pathFileName);

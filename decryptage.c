@@ -92,14 +92,11 @@ void decryptage(const char *min, const char *maj, const char *pathFileNameTexte,
 {
    char * cypher = NULL;
    char * cypher_key = NULL;
-
    cypher = read_source_from_file(pathFileNameCypher);
-
    cypher_key = read_source_from_file(pathFileNameCypherKey);
-
    char * clair = decrypt_cypher(cypher_key, cypher, min, maj);
-   printf("clair = %s ", clair);
-   write_cypher_in_file(clair, pathFileNameTexte);
+   if(clair)
+        write_cypher_in_file(clair, pathFileNameTexte);
 }
 
 /**
@@ -117,7 +114,6 @@ void decryptage_saisie_cle(const char *min, const char *maj, const char *pathFil
    char * cypher = NULL;
    cypher = read_source_from_file(pathFileNameCypher);
    char * clair = decrypt_cypher(cypher_key, cypher, min, maj);
-   printf("clair = %s ", clair);
    write_cypher_in_file(clair, pathFileNameTexte);
 }
 

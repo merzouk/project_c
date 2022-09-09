@@ -31,7 +31,7 @@ void saisie_fichiers_chiffrement(const char * min, const char * maj)
     scanf("%s", cypher_key);
     printf("Le path vers le fichier contenant le texte clair ? ");
     scanf("%s", pathFileTxt);
-    printf("Le path vers le fichier contenant le texte chiffreé ? ");
+    printf("Le path vers le fichier contenant le texte chiffree ? ");
     scanf("%s", pathFileCypher);
     crypt_containt_file_key(min, maj, pathFileTxt, pathFileCypher, cypher_key);
 }
@@ -54,7 +54,7 @@ void saisie_fichiers_dechiffrement(const char * min, const char * maj)
     scanf("%s", cypher_key);
     printf("Le path vers le fichier contenant le texte clair ? ");
     scanf("%s", pathFileTxt);
-    printf("Le path vers le fichier contenant le texte chiffreé ? ");
+    printf("Le path vers le fichier contenant le texte chiffree ? ");
     scanf("%s", pathFileCypher);
     decrypt_containt_file_cle(min, maj, pathFileTxt, pathFileCypher, cypher_key);
 }
