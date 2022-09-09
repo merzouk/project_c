@@ -107,9 +107,9 @@ Dans le menu nous avons 8 choix :
 3. La clé de chiffrement est saisie manuellement par l'utilisateur.
 4. La clé de déchiffrement est saisie manuellement par l'utilisateur.
 5. Les chemins vers les fichiers clair et crypté ainsi que la clé de chiffrement sont saisis 
-   manuelleent par l'utilisateur.
+   manuellement par l'utilisateur.
 6. Les chemins vers les fichiers clair et crypté ainsi que la clé de déchiffrement sont saisis 
-   manuelleent par l'utilisateur.
+   manuellement par l'utilisateur.
 7. Suppression du fichier source.txt
 8. Trois exemples sont donnés pour voir les entrées et sorties dans le cas du chiffrement et 
    du déchiffrement
