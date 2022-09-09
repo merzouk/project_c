@@ -110,4 +110,8 @@ Dans le menu nous avons 6 choix :
 
 ```
 
+# Note
 
+```
+Les chemins des différents fichiers sont déposés dans le fichier file.h, ils peuvent êtree modifiés à volonté.
+```
