@@ -95,7 +95,7 @@ Dans le menu nous avons 6 choix :
 
 ```
 
-# Détails des choix
+# Détails des choix du menu
 
 ```
 1. Un fichier nommé source.txt contenant le texte clair et un fichier peroq.def contenant la clé  
