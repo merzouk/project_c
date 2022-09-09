@@ -87,8 +87,10 @@ Dans le menu nous avons 6 choix :
 2. Dechiffrer un texte
 3. Chiffrer par saisi de cle
 4. Dechiffrer par saisi de cle
-5. Supprimer le fichier source
-6. Voir une demo
+5. Chiffrer par saisi des paths des fichiers
+6. Dechiffrer par saisi des paths des fichiers
+7. Supprimer le fichier source
+8. Voir une demo
 0. Quitter
 
 ```
@@ -104,8 +106,10 @@ Dans le menu nous avons 6 choix :
 
 3. La clé de chiffrement est saisie manuellement par l'utilisateur
 4. La clé de déchiffrement est saisie manuellement par l'utilisateur
-5. Suppression du fichier source.txt
-6. Trois exemples sont donnés pour voir les entrées et sorties dans le cas du chiffrement et du déchiffrement
+5. Les chemins vers les fichiers clair et crypté ainsi que la clé de chiffrement sont saisis manuelleent par l'utilisateur
+6. Les chemins vers les fichiers clair et crypté ainsi que la clé de déchiffrement sont saisis manuelleent par l'utilisateur
+7. Suppression du fichier source.txt
+8. Trois exemples sont donnés pour voir les entrées et sorties dans le cas du chiffrement et du déchiffrement
 0. Quitter le programme
 
 ```
