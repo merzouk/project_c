@@ -6,10 +6,15 @@
 * \date 08 septembre 2022
 *
 * cette partie gère le menu principal :
-    - 0 : Quitter le programme
-	- 1 : Crypter un texte clair
-    - 2 : Decrypter un texte chiffré
-    - 3 : Voir une démonstration
+            -1. Chiffrer un texte
+       	    -2. Dechiffrer un texte
+       	    -3. Chiffrer par saisi de cle
+			-4. Dechiffrer par saisi de cle
+			-5. Chiffrer par saisi des paths des fichiers
+			-6. Dechiffrer par saisi des paths des fichiers
+       	    -7. Supprimer le fichier source
+			-8. Voir une demo
+       	    -0. Quitter
 *
 */
 
@@ -63,10 +68,8 @@ void menu(const char *min, const char *maj)
 			printf("6. Dechiffrer par saisi des paths des fichiers \n");
        	    printf("7. Supprimer le fichier source \n");
 			printf("8. Voir une demo \n");
-
        	    printf("0. Quitter \n");
        	    printf("Votre choix : ");
-
             scanf("%d",&menu);
        	    if(check_value(menu) == 'K')
 			{

@@ -1,7 +1,7 @@
 
 /**
 * \file saisie_manuelle.c
-* \brief Point d'entrée de la gestion de la saisie manuelle de la cle de chiffrement et du texte.
+* \brief Point d'entrée de la gestion de la saisie manuelle de la cle de chiffrement.
 * \author Merzouk MENHOUR
 * \version 1.0
 * \date 08 septembre 2022
@@ -14,7 +14,7 @@
 #include "header.h"
 
 /**
-* \fn void saisie_cle_chiffrement(const char * min, const char * maj);
+* \fn void saisie_cle_chiffrement(const char * min, const char * maj, const char *pathFileNameTexte,  const char *pathFileNameCypher)
 * \brief Fonction permettant de saisir manuellement la cle de chiffrement
 *
 * \param[in] min : lettre miniscule de l'alaphabet
@@ -34,7 +34,7 @@ void saisie_cle_chiffrement(const char * min, const char * maj, const char *path
 }
 
 /**
-* \fn void saisie_cle_dechiffrement(const char * min, const char * maj);
+* \fn void saisie_cle_dechiffrement(const char * min, const char * maj, const char *pathFileNameTexte, const char *pathFileNameCypher)
 * \brief Fonction permettant de saisir manuellement la cle de dechiffrement
 *
 * \param[in] min : lettre miniscule de l'alaphabet

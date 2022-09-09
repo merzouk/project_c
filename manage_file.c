@@ -17,7 +17,7 @@
 * \fn char * read_source_from_file(char *pathFileName)
 * \brief Fonction permettant de lire le texte clair depuis le fichier source dans le pathFileName est indiqué dans les paramètres
 *
-* \param[in] pathFileName : Opérande 1
+* \param[in] pathFileName : chemin vers le fichier à lire
 * \return char : contenu du texte clair.
 */
 char * read_source_from_file(const char *pathFileName)
@@ -58,8 +58,8 @@ char * read_source_from_file(const char *pathFileName)
 * \fn void write_cypher_in_file(char *source, char * pathFileName)
 * \brief Fonction permettant d'écrire le texte chiffré source dans le fichier cible dans le pathFileName est indiqué dans les paramètres
 *
-* \param[in] source : Opérande 1
-* \param[in] pathFileName : Opérande 2
+* \param[in] source : contenu à inserer
+* \param[in] pathFileName : chemin vers le fichier à ouvrir en ecriture
 * \return void : sortie sans retour.
 */
 void write_cypher_in_file(char *source, const char * pathFileName)
@@ -83,7 +83,7 @@ void write_cypher_in_file(char *source, const char * pathFileName)
    pfile = fopen(pathFileName, "w+t");
    if(pfile == NULL)
    {
-     printf("Error opening %s for writing. Program terminated.", pathFileName);
+     printf("Erreur d'ouverture pour ecriture du fichier %s Programme terminé.", pathFileName);
      return;
    }
 

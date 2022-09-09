@@ -22,7 +22,7 @@
 * \brief Entrée du programme.
 * \param[in] min : alphabet au miniscule
 * \param[in] maj : alphabet au format majiscule
-* \return EXIT_SUCCESS - Arrêt normal du programme.
+* \return 0 - Arrêt normal du programme.
 * \return EXIT_FAILURE - Arrêt anormal du programme.
 */
 
