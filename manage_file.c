@@ -108,7 +108,7 @@ void delete_file_source()
 {
     const char *pathFileNameTexte = "F:/SECURITE/source.txt";
     printf("Etes vous sur de vouloir supprimer le fichier %s \n", pathFileNameTexte);
-    printf("(1) pour oui et autre pour non : ");
+    printf("(1) pour oui et autre nombre pour non : ");
     if(choose() == 1)
     {
         if (remove(pathFileNameTexte) == 0)
