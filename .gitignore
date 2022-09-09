@@ -5,5 +5,5 @@ obj/
 *.layout
 *.o
 *.exe
+*.zip
 manage_cypher
-
