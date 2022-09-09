@@ -77,3 +77,35 @@ contenant le texte crypté
 # Option :
 
 De plus, on prévoira de supprimer la source après cryptage de telle manière à ne conserver que le fichier crypté.
+
+# Menu
+
+Dans le menu nous 6 choix : 
+
+```
+1. Chiffrer un texte
+2. Dechiffrer un texte
+3. Chiffrer par saisi de cle
+4. Dechiffrer par saisi de cle
+5. Supprimer le fichier source
+6. Voir une demo
+0. Quitter
+
+```
+
+# Détails des choix
+
+```
+1. Un fichier nommé source.txt contenant le texte clair et un fichier peroq.def contenant la clé de chiffreement sont lus et le chiffré est déposé dans le fichier dest.crt
+
+2. Un fichier nommé dest.crt contenant le texte chiffré et un fichier peroq.def contenant la clé de déchiffreement sont lus et le déchiffré est déposé dans le fichier source.txt
+
+3. La clé de chiffrement est saisie manuellement par l'utilisateur
+4. La clé de déchiffrement est saisie manuellement par l'utilisateur
+5. Suppression du fichier source.txt
+6. Trois exemples sont donnés pour voir les entrées et sorties dans le cas du chiffrement et du déchiffrement
+0. Quitter le programme
+
+```
+
+
