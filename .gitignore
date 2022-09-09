@@ -1,6 +1,5 @@
-*.chp
-
-
-
-
-
+*.cbp
+bin/
+obj/
+*.depend
+*.layout
