@@ -1,4 +1,4 @@
-## project_c
+## project_c : chiffrement du perroquet
 Projet c pour la formation C/C++ embarqué
 
 ```
