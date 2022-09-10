@@ -80,7 +80,7 @@ De plus, on prévoira de supprimer la source après cryptage de telle manière �
 
 # Menu
 
-Dans le menu nous avons 6 choix : 
+Dans le menu nous avons 8 choix : 
 
 ```
 1. Chiffrer un texte
@@ -107,9 +107,9 @@ Dans le menu nous avons 6 choix :
 3. La clé de chiffrement est saisie manuellement par l'utilisateur.
 4. La clé de déchiffrement est saisie manuellement par l'utilisateur.
 5. Les chemins vers les fichiers clair et crypté ainsi que la clé de chiffrement sont saisis 
-   manuelleent par l'utilisateur.
+   manuellement par l'utilisateur.
 6. Les chemins vers les fichiers clair et crypté ainsi que la clé de déchiffrement sont saisis 
-   manuelleent par l'utilisateur.
+   manuellement par l'utilisateur.
 7. Suppression du fichier source.txt
 8. Trois exemples sont donnés pour voir les entrées et sorties dans le cas du chiffrement et 
    du déchiffrement
@@ -122,4 +122,6 @@ Dans le menu nous avons 6 choix :
 ```
 Dans le cas 1 et 2, les chemins des différents fichiers sont renseignés dans le fichier file.h. 
 Ils peuvent être modifiés à volonté.
+
+Les développements et les tests sont réalisés en totalité sous codeBlocks
 ```
