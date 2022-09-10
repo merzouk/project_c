@@ -61,4 +61,11 @@ void saisie_fichiers_chiffrement(const char * min, const char * maj);
 
 void saisie_fichiers_dechiffrement(const char * min, const char * maj);
 
+void infos_messages();
+
+
+int length(char * str);
+
+void string_copy(char *src, char * dest);
+
 #endif

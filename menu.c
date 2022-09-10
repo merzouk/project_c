@@ -6,15 +6,15 @@
 * \date 08 septembre 2022
 *
 * cette partie gère le menu principal :
-            -1. Chiffrer un texte
-       	    -2. Dechiffrer un texte
-       	    -3. Chiffrer par saisi de cle
-			-4. Dechiffrer par saisi de cle
-			-5. Chiffrer par saisi des paths des fichiers
-			-6. Dechiffrer par saisi des paths des fichiers
-       	    -7. Supprimer le fichier source
-			-8. Voir une demo
-       	    -0. Quitter
+   - 1. Chiffrer un texte
+   - 2. Dechiffrer un texte
+   - 3. Chiffrer par saisi de cle
+   - 4. Dechiffrer par saisi de cle
+   - 5. Chiffrer par saisi des paths des fichiers
+   - 6. Dechiffrer par saisi des paths des fichiers
+   - 7. Supprimer le fichier source
+   - 8. Voir une demo
+   - 0. Quitter
 *
 */
 
@@ -44,6 +44,13 @@ char check_value(int choose)
 	return 'K';
 }
 
+/**
+* \fn int length(char * str)
+* \brief Fonction permettant de calculer la logueur de la chaine de caracteres
+*
+* \param[in] str : chaine de caracteres
+* \return int : longueur de la chaine
+*/
 int length(char * str)
 {
     if(!str) return 0;
@@ -52,6 +59,14 @@ int length(char * str)
     return length;
 }
 
+/**
+* \fn void string_copy(char *src, char * dest)
+* \brief Fonction permettant de copier le contenu de la chaine src vers la chaine dest
+*
+* \param[in] src : chaine de caracteres a copier
+* \param[in] dest : chaine de caracteres ver laquelle on copie le contenu de la chaine src
+* \return void : sans retour
+*/
 void string_copy(char *src, char * dest)
 {
     int length_dst = length(dest);
@@ -81,6 +96,27 @@ void string_copy(char *src, char * dest)
 }
 
 /**
+* \fn char infos_messages()
+* \brief Fonction permettant d'afficher les messages du menu
+*
+* \return void : sortie sans retour.
+*/
+void infos_messages()
+{
+	    printf("\n----------------------- MENU -----------------------\n");
+   	    printf("1. Chiffrer un texte\n");
+   	    printf("2. Dechiffrer un texte  \n");
+   	    printf("3. Chiffrer par saisi de cle \n");
+     	printf("4. Dechiffrer par saisi de cle \n");
+		printf("5. Chiffrer par saisi des paths des fichiers \n");
+		printf("6. Dechiffrer par saisi des paths des fichiers \n");
+        printf("7. Supprimer le fichier source \n");
+		printf("8. Voir une demo \n");
+        printf("0. Quitter \n");
+        printf("Votre choix : ");
+}
+
+/**
 * \fn int menu(const char *min, const char *maj, int argc, char **argv)
 * \brief Fonction permettant de gérer le menu par l'utilisateur
 *
@@ -94,21 +130,10 @@ void string_copy(char *src, char * dest)
 int menu(const char *min, const char *maj, int argc, char **argv)
 {
 	int menu = -1;
-        do
-    	{
+    do
+    {
     	    menu = -1;
-       	    printf("\n----------------------- MENU -----------------------\n");
-
-       	    printf("1. Chiffrer un texte\n");
-       	    printf("2. Dechiffrer un texte  \n");
-       	    printf("3. Chiffrer par saisi de cle \n");
-			printf("4. Dechiffrer par saisi de cle \n");
-			printf("5. Chiffrer par saisi des paths des fichiers \n");
-			printf("6. Dechiffrer par saisi des paths des fichiers \n");
-       	    printf("7. Supprimer le fichier source \n");
-			printf("8. Voir une demo \n");
-       	    printf("0. Quitter \n");
-       	    printf("Votre choix : ");
+    	    infos_messages();
             scanf("%d",&menu);
        	    if(check_value(menu) == 'K')
 			{

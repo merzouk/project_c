@@ -9,8 +9,16 @@
     - Le texte source est lu dans un fichier source.txt
 	- Le texte crypte est depose dans le fichier dest.crt
 	- Le programme est gere par un menu par lequel l'utilisateur choisi ce qu'il fait.
-	- L'utilisateur doit indiquer le chemin vers le dossier contenant le fichier source.
-	- L'utilisateur doit indiquer le chemin vers le dossier dans lequel le fichier crypter doit etre depose
+	- 1 cas L'utilisateur doit indiquer le chemin vers le dossier contenant le fichier source.
+	-       L'utilisateur doit indiquer le chemin vers le dossier dans lequel le fichier du texte crypter doit etre depose
+	-       L'utilisateur doit indiquer le chemin vers le dossier dans lequel se trouve le fichier contenant la cle de cryptage
+	- 2 cas L'utilisateur doit indiquer le chemin vers le dossier contenant le fichier crypte.
+	-       L'utilisateur doit indiquer le chemin vers le dossier dans lequel le fichier du texte clair doit etre depose
+	-       L'utilisateur doit indiquer le chemin vers le dossier dans lequel se trouve le fichier contenant la cle de cryptage
+	- 3 cas L'utilisateur doit indiquer le chemin vers le dossier contenant le fichier crypte par saisie manuelle
+	-       L'utilisateur doit indiquer le chemin vers le dossier dans lequel le fichier du texte clair doit etre depose par saisie manuelle
+	-       L'utilisateur doit indiquer le chemin vers le dossier dans lequel se trouve le fichier contenant la cle de cryptage par saisie manuelle
+
 *
 */
 
