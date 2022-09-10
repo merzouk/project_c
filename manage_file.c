@@ -30,10 +30,12 @@ char * read_source_from_file(const char *pathFileName)
 		printf("Le fichier contenant le texte a chiffrer n'est pas renseigne %s ", pathFileName);
 		return NULL;
 	}
-
     textfile = fopen(pathFileName, "r");
     if(textfile == NULL)
+    {
+    	printf("\nErreur d'ouverture en lecture du fichier %s Programme termine en echec ", pathFileName);
         return NULL;
+    }
 
     fseek(textfile, 0L, SEEK_END);
     numbytes = ftell(textfile);
@@ -68,7 +70,7 @@ void write_cypher_in_file(char *source, const char * pathFileName)
 
 	if(!source)
 	{
-		printf("Le contenu a inserer dans le fichier n'est pas renseigne %s ", source);
+		printf("Le contenu a inserer dans le fichier %s n'est pas renseigne %s ", pathFileName, source);
 		return;
 	}
 
