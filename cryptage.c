@@ -5,7 +5,7 @@
 * \version 1.0
 * \date 08 septembre 2022
 *
-* cette partie gère cryptage du contenu du fichier clair :
+* cette partie gere cryptage du contenu du fichier clair :
     - Lire le fichier source contenant le texte clair
 	- Ecrire le texte chiffré dans le fichier destintation
 *
@@ -15,7 +15,7 @@
 
 /**
 * \fn int get_rang_maj(char c)
-* \brief Fonction permettant de donner le rang dans l'alphabet d'un caractère c
+* \brief Fonction permettant de donner le rang dans l'alphabet d'un caractere c
 *
 * \param[in] c : le caractère dont on cherche le rang dans l'alphabet en lettre majiscule
 * \param[in] maj : l'alphabet en lettre majiscule
@@ -35,7 +35,7 @@ int get_rang_maj(char c, const char *maj)
 
 /**
 * \fn int get_rang_min(char c)
-* \brief Fonction permettant de donner le rang dans l'alphabet d'un caractère c
+* \brief Fonction permettant de donner le rang dans l'alphabet d'un caractere c
 *
 * \param[in] c : le caractère dont on cherche le rang dans l'alphabet en lettre miniscule
 * \param[in] min : l'alphabet en lettre miniscule
@@ -55,13 +55,13 @@ int get_rang_min(char c, const char *min)
 
 /**
 * \fn char * encrypt_source(const char *source, const char *cypher_key, const char *min, const char *maj)
-* \brief Fonction permettant de crypter le texte clair source avec la clé de cryptage cypher_key
+* \brief Fonction permettant de crypter le texte clair source avec la cle de cryptage cypher_key
 *
-* \param[in] source : le texte clair à chiffrer
-* \param[in] cypher_key : clé de chiffrement
+* \param[in] source : le texte clair a chiffrer
+* \param[in] cypher_key : cle de chiffrement
 * \param[in] min : lettre miniscule de l'alaphabet
 * \param[in] maj : lettre majiscule de l'alaphabet
-* \return char : contenu du texte crypté.
+* \return char : contenu du texte crypte.
 */
 char * encrypt_source(const char *source, const char *cypher_key, const char *min, const char *maj)
 {
@@ -94,12 +94,12 @@ char * encrypt_source(const char *source, const char *cypher_key, const char *mi
 
 /**
 * \fn cryptage(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypherKey, const char *pathFileNameCypher)
-* \brief Fonction permettant l'entré dans le menu de decryptage le texte chiffré
+* \brief Fonction permettant l'entree dans le menu de decryptage le texte chiffre
 * \param[in] min : alphabet au miniscule
 * \param[in] maj : alphabet au format majiscule
 * \param[in] pathFileNameTexte : chemin vers le fichier contenant le texte clair
-* \param[in] pathFileNameCypherKey : chemin vers le fichier contenant la clé de chiffrement
-* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffré
+* \param[in] pathFileNameCypherKey : chemin vers le fichier contenant la cle de chiffrement
+* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffre
 * \return void : sortie sans retour.
 */
 void cryptage(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypherKey, const char *pathFileNameCypher)
@@ -114,12 +114,12 @@ void cryptage(const char *min, const char *maj, const char *pathFileNameTexte, c
 
 /**
 * \fn void cryptage_saisie_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypherKey, const char *cypher_key)
-* \brief Fonction permettant l'entré dans le menu de decryptage le texte chiffré
+* \brief Fonction permettant l'entree dans le menu de decryptage le texte chiffre
 * \param[in] min : alphabet au miniscule
 * \param[in] maj : alphabet au format majiscule
 * \param[in] pathFileNameTexte : chemin vers le fichier contenant le texte clair
-* \param[in] cypher_key : la clé de chiffrement saisie manuellement
-* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffré
+* \param[in] cypher_key : la cle de chiffrement saisie manuellement
+* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffre
 * \return void : sortie sans retour.
 */
 void cryptage_saisie_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char *cypher_key)
@@ -136,9 +136,9 @@ void cryptage_saisie_cle(const char *min, const char *maj, const char *pathFileN
 * \param[in] min : alphabet au miniscule
 * \param[in] maj : alphabet au format majiscule
 * \param[in] pathFileNameTexte : chemin vers le fichier contenant le texte clair
-* \param[in] cypher_key : la clé de chiffrement saisie manuellement
-* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffré
-* \return void - Arrêt normal du programme.
+* \param[in] cypher_key : la cle de chiffrement saisie manuellement
+* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffre
+* \return void - Arret normal du programme.
 */
 void crypt_containt_file(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypherKey, const char *pathFileNameCypher)
 {
@@ -151,12 +151,11 @@ void crypt_containt_file(const char *min, const char *maj, const char *pathFileN
 * \param[in] min : alphabet au miniscule
 * \param[in] maj : alphabet au format majiscule
 * \param[in] pathFileNameTexte : chemin vers le fichier contenant le texte clair
-* \param[in] cypher_key : la clé de chiffrement saisie manuellement
-* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffré
+* \param[in] cypher_key : la cle de chiffrement saisie manuellement
+* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffre
 * \return void -
 */
 void crypt_containt_file_key(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char * cypher_key)
 {
    cryptage_saisie_cle(min, maj, pathFileNameTexte, pathFileNameCypher, cypher_key);
 }
-

@@ -1,12 +1,12 @@
 /**
 * \file decryptage.c
-* \brief Point d'entrée du décryptage du contenu du fichier crypté.
+* \brief Point d'entree du decryptage du contenu du fichier crypte.
 * \author Merzouk MENHOUR
 * \version 1.0
 * \date 08 septembre 2022
 *
-* cette partie gère le décryptage du contenu du fichier crypté :
-	 - Lire le fichier source contenant le texte chiffré
+* cette partie gere le decryptage du contenu du fichier crypte :
+	 - Lire le fichier source contenant le texte chiffre
 	 - Ecrire le texte clair dans le fichier destintation
 *
 */
@@ -15,10 +15,10 @@
 
 /**
 * \fn int check_datas(const char * cypher_key, const char * source)
-* \brief Fonction permettant de vérifier le contenu du texte clair ou chiffré source plus la clé de chiffremennt cypher_key
+* \brief Fonction permettant de verifier le contenu du texte clair ou chiffre source plus la cle de chiffremennt cypher_key
 *
-* \param[in] cypher_key : clé de chiffrement
-* \param[in] source : texte chiffrer à déchiffrer
+* \param[in] cypher_key : cle de chiffrement
+* \param[in] source : texte chiffrer a dechiffrer
 * \return int : 0 si le contenu est correct -1 sinon
 */
 int check_datas(const char * cypher_key, const char * source)
@@ -38,13 +38,13 @@ int check_datas(const char * cypher_key, const char * source)
 
 /**
 * \fn char * decrypter(const char *cypher_key, const char * source)
-* \brief Fonction permettant de decrypter le texte crypté contenu dans le fichier source avec la clé de decryptage cypher_key
+* \brief Fonction permettant de decrypter le texte crypte contenu dans le fichier source avec la cle de decryptage cypher_key
 *
-* \param[in] cypher_key : clé de chiffrement
-* \param[in] source : texte chiffrer à déchiffrer
+* \param[in] cypher_key : cle de chiffrement
+* \param[in] source : texte chiffrer a dechiffrer
 * \param[in] min : lettre miniscule de l'alaphabet
 * \param[in] maj : lettre majiscule de l'alaphabet
-* \return char : contenu du texte decrypté.
+* \return char : contenu du texte decrypte.
 */
 char * decrypt_cypher(const char * cypher_key, const char * source, const char *min, const char *maj)
 {
@@ -77,12 +77,12 @@ char * decrypt_cypher(const char * cypher_key, const char * source, const char *
 
 /**
 * \fn void decryptage()
-* \brief Fonction permettant l'entré dans le menu de decryptage le texte chiffré
+* \brief Fonction permettant l'entre dans le menu de decryptage le texte chiffre
 * \param[in] min : alphabet au miniscule
 * \param[in] maj : alphabet au format majiscule
 * \param[in] pathFileNameTexte : chemin vers le fichier contenant le texte clair
-* \param[in] pathFileNameCypherKey : chemin vers le fichier contenant la clé de chiffrement
-* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffré
+* \param[in] pathFileNameCypherKey : chemin vers le fichier contenant la cle de chiffrement
+* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffre
 * \return void : sortie sans retour.
 */
 void decryptage(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypherKey, const char *pathFileNameCypher)
@@ -97,12 +97,12 @@ void decryptage(const char *min, const char *maj, const char *pathFileNameTexte,
 
 /**
 * \fn void cryptage_saisie_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypherKey, const char *cypher_key)
-* \brief Fonction permettant l'entré dans le menu de decryptage le texte chiffré par sais de la cle
+* \brief Fonction permettant l'entre dans le menu de decryptage le texte chiffre par sais de la cle
 * \param[in] min : alphabet au miniscule
 * \param[in] maj : alphabet au format majiscule
 * \param[in] pathFileNameTexte : chemin vers le fichier contenant le texte clair
-* \param[in] cypher_key : la clé de dechiffrement saisie manuellement
-* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffré
+* \param[in] cypher_key : la cle de dechiffrement saisie manuellement
+* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffre
 * \return void : sortie sans retour.
 */
 void decryptage_saisie_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char *cypher_key)
@@ -115,12 +115,12 @@ void decryptage_saisie_cle(const char *min, const char *maj, const char *pathFil
 
 /**
 * \fn void decrypt_containt_file(const char *min, const char *maj, const char *pathFileNameTexte,  const char *pathFileNameCypherKey, const char *pathFileNameCypher)
-* \brief Entrée de la fonction de decryptage.
+* \brief Entree de la fonction de decryptage.
 * \param[in] min : alphabet au miniscule
 * \param[in] maj : alphabet au format majiscule
 * \param[in] pathFileNameTexte : chemin vers le fichier contenant le texte clair
-* \param[in] cypher_key : la clé de dechiffrement saisie manuellement
-* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffré
+* \param[in] cypher_key : la cle de dechiffrement saisie manuellement
+* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffre
 * \return void : sortie sans retour.
 */
 void decrypt_containt_file(const char *min, const char *maj, const char *pathFileNameTexte,  const char *pathFileNameCypherKey, const char *pathFileNameCypher)
@@ -130,17 +130,15 @@ void decrypt_containt_file(const char *min, const char *maj, const char *pathFil
 
 /**
 * \fn int main (void)
-* \brief Entrée de la fonction de decryptagepar sais de cle.
+* \brief Entree de la fonction de decryptagepar sais de cle.
 * \param[in] min : alphabet au miniscule
 * \param[in] maj : alphabet au format majiscule
 * \param[in] pathFileNameTexte : chemin vers le fichier contenant le texte clair
-* \param[in] cypher_key : la clé de dechiffrement saisie manuellement
-* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffré
+* \param[in] cypher_key : la cle de dechiffrement saisie manuellement
+* \param[in] pathFileNameCypher : chemin vers le fichier contenant le texte chiffre
 * \return void - Arrêt normal du programme.
 */
 void decrypt_containt_file_cle(const char *min, const char *maj, const char *pathFileNameTexte, const char *pathFileNameCypher, const char * cypher_key)
 {
    decryptage_saisie_cle(min, maj, pathFileNameTexte, pathFileNameCypher, cypher_key);
 }
-
-

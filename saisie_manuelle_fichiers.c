@@ -1,13 +1,12 @@
 
 /**
 * \file saisie_manuelle_fichiers.c
-* \brief Point d'entrée de la gestion de la saisie manuelle des paths vers les fichiers.
+* \brief Point d'entree de la gestion de la saisie manuelle des paths vers les fichiers.
 * \author Merzouk MENHOUR
 * \version 1.0
 * \date 08 septembre 2022
 *
-* cette partie gère l'allocation dynamique de mémoire :
-
+* cette partie gere la saisie manuelle de la cle de chiffrement et des chemins vers les fichiers clair et chiffre :
 *
 */
 
@@ -15,10 +14,10 @@
 
 /**
 * \fn void saisie_cle_chiffrement(const char * min, const char * maj);
-* \brief Fonction permettant de saisir manuellement les paths vers les fichiers et de la cle de chiffrement
+* \brief Fonction permettant de saisir manuellement les paths vers les fichiers clair et chiffre et de la cle de chiffrement
 *
-* \param[in] min : lettre miniscule de l'alaphabet
-* \param[in] maj : lettre majiscule de l'alaphabet
+* \param[in] min : lettre au format miniscule de l'alaphabet
+* \param[in] maj : lettre au format majiscule de l'alaphabet
 *
 * \return void : retour sans valeur.
 */
@@ -38,10 +37,10 @@ void saisie_fichiers_chiffrement(const char * min, const char * maj)
 
 /**
 * \fn void saisie_cle_dechiffrement(const char * min, const char * maj);
-* \brief Fonction permettant de saisir manuellement les paths des fichiers et de cle de dechiffrement
+* \brief Fonction permettant de saisir manuellement les paths des fichiers clair et chiffre et de cle de dechiffrement
 *
-* \param[in] min : lettre miniscule de l'alaphabet
-* \param[in] maj : lettre majiscule de l'alaphabet
+* \param[in] min : lettre au format miniscule de l'alaphabet
+* \param[in] maj : lettre au format majiscule de l'alaphabet
 *
 * \return void : retour sans valeur.
 */

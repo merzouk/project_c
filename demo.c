@@ -21,6 +21,8 @@
 void demo(char *min, char *maj)
 {
     printf("\n=================== Demo ========================\n");
+
+    printf("\n=================== Exemple 1 ========================\n");
 	char * source = "Hello tout le monde !";
 	char * cypher_key = "crypto";
 	printf("\n\nCle de chiffremment = %s \ntexte clair = %s\n", cypher_key, source);
@@ -29,7 +31,7 @@ void demo(char *min, char *maj)
 	char * clair = decrypt_cypher(cypher_key, cypher, min, maj);
 	printf("\nLe dichiffre = %s  \n", clair);
 
-	printf("\n=================================================\n");
+    printf("\n=================== Exemple 2 ========================\n");
 
 	char * source1 = "Hello tout le monde depuis paris!";
 	char * cypher_key1 = "crYptoGraphie";
@@ -39,7 +41,7 @@ void demo(char *min, char *maj)
 	char * clair1 = decrypt_cypher(cypher_key1, cypher1, min, maj);
 	printf("\nLe dichiffre = %s  \n", clair1);
 
-	printf("\n=================================================\n");
+    printf("\n=================== Exemple 3 ========================\n");
 
 	char * source2 = "Hello tout le monde depuis paris!";
 	char * cypher_key2 = "cryptographie";
@@ -49,5 +51,5 @@ void demo(char *min, char *maj)
 	char * clair2 = decrypt_cypher(cypher_key2, cypher2, min, maj);
 	printf("\nLe dichiffre = %s  \n", clair2);
 
-	printf("\n=================================================\n");
+	printf("\n=================== Fin demo ========================\n");
 }

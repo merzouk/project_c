@@ -27,7 +27,7 @@ void decryptage(const char *min, const char *maj, const char *pathFileNameTexte,
 
 char check_value(int choose);
 
-void menu(const char *min, const char *maj);
+int menu(const char *min, const char *maj, int argc, char **argv);
 
 char * choose_cypher_key(int choose);
 

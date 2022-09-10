@@ -1,3 +1,11 @@
+/**
+* \file ressources.h
+* \brief Deux listes de l'alphabet au format miniscule et majiscule.
+* \author Merzouk MENHOUR
+* \version 1.0
+* \date 8 septembre 2022
+*/
+
 #ifndef RESSOURCES_H
 #define RESSOURCES_H
 

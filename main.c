@@ -1,16 +1,16 @@
 /**
 * \file main.c
-* \brief Point d'entrée.
+* \brief Point d'entree.
 * \author Merzouk MENHOUR
 * \version 1.0
 * \date 08 septembre 2022
 *
-* Programme permettant à partir d'une clé, crypter et décrypter un texte :
+* Programme permettant a partir d'une cle, crypter et décrypter un texte :
     - Le texte source est lu dans un fichier source.txt
-	- Le texte crypté est déposé dans le fichier dest.crt
-	- Le programme est géré par un menu par lequel l'utilisateur choisi ce qu'il fait.
+	- Le texte crypte est depose dans le fichier dest.crt
+	- Le programme est gere par un menu par lequel l'utilisateur choisi ce qu'il fait.
 	- L'utilisateur doit indiquer le chemin vers le dossier contenant le fichier source.
-	- L'utilisateur doit indiquer le chemin vers le dossier dans lequel le fichier crypter doit être déposé
+	- L'utilisateur doit indiquer le chemin vers le dossier dans lequel le fichier crypter doit etre depose
 *
 */
 
@@ -19,18 +19,15 @@
 
 /**
 * \fn int main (void)
-* \brief Entrée du programme.
-* \param[in] min : alphabet au miniscule
+* \brief Entree du programme.
+* \param[in] min : alphabet au format miniscule
 * \param[in] maj : alphabet au format majiscule
-* \return 0 - Arrêt normal du programme.
-* \return EXIT_FAILURE - Arrêt anormal du programme.
+* \return 0 - Arret normal du programme.
+* \return 1 - Arret anormal du programme.
 */
 
-
-
-int main()
+int main(int argc, char **argv)
 {
-    menu(min, maj);
-    printf("\n\n");
+    menu(min, maj, argc, argv);
     return 0;
 }

@@ -5,9 +5,9 @@
 * \version 1.0
 * \date 08 septembre 2022
 *
-* cette partie gère la lecture du fichier source du contenu clair, et l'écriture dans le fichier destination du texte chiffré :
+* cette partie gere la lecture du fichier source du contenu clair, et l'ecriture dans le fichier destination du texte chiffre :
     - Lire le fichier source contenant le texte clair
-	- Ecrire du texte chiffré dans le fichier destintation
+	- Ecrire du texte chiffre dans le fichier destintation
 *
 */
 
@@ -15,9 +15,9 @@
 
 /**
 * \fn char * read_source_from_file(char *pathFileName)
-* \brief Fonction permettant de lire le texte clair depuis le fichier source dans le pathFileName est indiqué dans les paramètres
+* \brief Fonction permettant de lire le texte clair depuis le fichier source dans le pathFileName est indique dans les parametres
 *
-* \param[in] pathFileName : chemin vers le fichier à lire
+* \param[in] pathFileName : chemin vers le fichier a lire
 * \return char : contenu du texte clair.
 */
 char * read_source_from_file(const char *pathFileName)
@@ -27,7 +27,7 @@ char * read_source_from_file(const char *pathFileName)
     long    numbytes;
 	if(!pathFileName)
 	{
-		printf("Le fichier contenant le texte à chiffrer n'est pas renseigné %s ", pathFileName);
+		printf("Le fichier contenant le texte a chiffrer n'est pas renseigne %s ", pathFileName);
 		return NULL;
 	}
 
@@ -52,10 +52,10 @@ char * read_source_from_file(const char *pathFileName)
 
 /**
 * \fn void write_cypher_in_file(char *source, char * pathFileName)
-* \brief Fonction permettant d'écrire le texte chiffré source dans le fichier cible dans le pathFileName est indiqué dans les paramètres
+* \brief Fonction permettant d'ecrire le texte chiffre source dans le fichier cible dans le pathFileName est indique dans les parametres
 *
-* \param[in] source : contenu à inserer
-* \param[in] pathFileName : chemin vers le fichier à ouvrir en ecriture
+* \param[in] source : contenu a inserer
+* \param[in] pathFileName : chemin vers le fichier a ouvrir en ecriture
 * \return void : sortie sans retour.
 */
 void write_cypher_in_file(char *source, const char * pathFileName)
@@ -78,14 +78,14 @@ void write_cypher_in_file(char *source, const char * pathFileName)
    pfile = fopen(pathFileName, "w+t");
    if(pfile == NULL)
    {
-     printf("Erreur d'ouverture pour ecriture du fichier %s Programme terminé.", pathFileName);
+     printf("Erreur d'ouverture pour ecriture du fichier %s Programme termine en echec.", pathFileName);
      return;
    }
 
    length = strlen( source );
    for(int i = 0 ; i < length ; i++)
    {
-     fputc(*(source + i), pfile);  /* Write string to file backwards */
+     fputc(*(source + i), pfile);
    }
    fclose(pfile);
    printf("Ecriture dans le fichier %s s'est terminee avec succes ",pathFileName);
@@ -103,7 +103,7 @@ char choose()
 * \fn int exists_file(const char *pathFileName)
 * \brief Fonction permettant de verifier si un fichier existe ou pas
 *
-* \param[in] pathFileName : fichier vers le fichier
+* \param[in] pathFileName : chemin vers le fichier
 * \return void : sortie sans retour.
 */
 int exists_file(const char *pathFileName)
@@ -125,7 +125,7 @@ int exists_file(const char *pathFileName)
 * \fn void delete_file_source(const char *pathFileNameTexte)
 * \brief Fonction permettant de supprmer le fichier mis en parametre
 *
-* \param[in] pathFileNameTexte : fichier a supprimer
+* \param[in] pathFileNameTexte : le chemin vers le fichier a supprimer
 * \return void : sortie sans retour.
 */
 void delete_file_source(const char *pathFileNameTexte)

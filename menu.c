@@ -44,15 +44,54 @@ char check_value(int choose)
 	return 'K';
 }
 
+int length(char * str)
+{
+    if(!str) return 0;
+    int length = 0;
+    while(*(str + length) != '\0') length++;
+    return length;
+}
+
+void string_copy(char *src, char * dest)
+{
+    int length_dst = length(dest);
+    if(length_dst == 0)
+    {
+        int i = 0;
+		int j = length_dst;
+        while (*(src + i))
+		{
+            *(dest + j) = *(src + i);
+			i++;
+			j++;
+        }
+        *(dest + j) = '\0';
+    }
+    else
+    {
+        int i = 0;
+        int j = length_dst;
+        while (*(src + i )) {
+            *(dest + j) = *(src + i);
+            i++;
+            j++;
+        }
+        *(dest + j) = '\0';
+    }
+}
+
 /**
-* \fn void menu(char *min, char *maj)
+* \fn int menu(const char *min, const char *maj, int argc, char **argv)
 * \brief Fonction permettant de gérer le menu par l'utilisateur
 *
 * \param[in] min : alphabet au miniscule
 * \param[in] maj : alphabet au format majiscule
-* \return void : Sortie du programme.
+* \param[in] argc : le nombre d'arguments fournis a l'entree du programme
+* \param[in] argv : la liste des arguments fournis a l'entree du programme
+* \return 0 : Sortie normal du programme.
+* \return 1 : Sortie en erreur du programme
 */
-void menu(const char *min, const char *maj)
+int menu(const char *min, const char *maj, int argc, char **argv)
 {
 	int menu = -1;
         do
@@ -110,4 +149,5 @@ void menu(const char *min, const char *maj)
        		}
     	}while (menu!=0);
 		printf("Sortie du programme \n");
+		return 0;
 }
