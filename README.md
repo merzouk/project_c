@@ -122,4 +122,6 @@ Dans le menu nous avons 8 choix :
 ```
 Dans le cas 1 et 2, les chemins des différents fichiers sont renseignés dans le fichier file.h. 
 Ils peuvent être modifiés à volonté.
+
+Les développements et les tests sont réalisés en totalité sous codeBlocks
 ```
