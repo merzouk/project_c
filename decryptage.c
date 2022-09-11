@@ -18,14 +18,14 @@
 * \brief Fonction permettant de verifier le contenu du texte clair ou chiffre source plus la cle de chiffremennt cypher_key
 *
 * \param[in] cypher_key : cle de chiffrement
-* \param[in] source : texte chiffrer a dechiffrer
+* \param[in] source : texte chiffrer a dechiffrer ou clair a chiffrer
 * \return int : 0 si le contenu est correct -1 sinon
 */
 int check_datas(const char * cypher_key, const char * source)
 {
 	if(!source || strlen(source) == 0)
 	{
-        printf("\nLe texte chiffre %s n'est pas renseigne, cryptage/decryptage impossible\n",source);
+        printf("\nLe texte clair/chiffre %s n'est pas renseigne, cryptage/decryptage impossible\n",source);
 		return -1;
 	}
 	if(!cypher_key || strlen(cypher_key) == 0)
@@ -42,8 +42,8 @@ int check_datas(const char * cypher_key, const char * source)
 *
 * \param[in] cypher_key : cle de chiffrement
 * \param[in] source : texte chiffrer a dechiffrer
-* \param[in] min : lettre miniscule de l'alaphabet
-* \param[in] maj : lettre majiscule de l'alaphabet
+* \param[in] min : lettre au format miniscule de l'alaphabet
+* \param[in] maj : lettre au format majiscule de l'alaphabet
 * \return char : contenu du texte decrypte.
 */
 char * decrypt_cypher(const char * cypher_key, const char * source, const char *min, const char *maj)
@@ -55,8 +55,7 @@ char * decrypt_cypher(const char * cypher_key, const char * source, const char *
     }
 	unsigned size_key = strlen(cypher_key);
 	target = alloc_memory(strlen(source) + 1);
-	unsigned int i = 0;
-	for(i = 0 ; source[i] != '\0' ; i++)
+	for(unsigned int i = 0 ; source[i] != '\0' ; i++)
 	{
 		if(((int)(source[i]) >= (int)('a') && (int)(source[i]) <= (int)('z')))
 		{

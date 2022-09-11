@@ -6,7 +6,7 @@
 * \date 08 septembre 2022
 *
 * cette partie gere l'allocation dynamique de memoire :
-
+*
 *
 */
 

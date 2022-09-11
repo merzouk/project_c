@@ -1,4 +1,3 @@
-
 /**
 * \file saisie_manuelle.c
 * \brief Point d'entree de la gestion de la saisie manuelle de la cle de chiffrement.
@@ -6,7 +5,8 @@
 * \version 1.0
 * \date 08 septembre 2022
 *
-* cette partie gere lla saisie manuelle de la cle de chiffrement et de dechiffrement
+*   cette partie gere
+    - la saisie manuelle de la cle de chiffrement et de dechiffrement
 */
 
 #include "header.h"

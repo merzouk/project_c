@@ -1,4 +1,3 @@
-
 /**
 * \file saisie_manuelle_fichiers.c
 * \brief Point d'entree de la gestion de la saisie manuelle des paths vers les fichiers.
@@ -6,7 +5,9 @@
 * \version 1.0
 * \date 08 septembre 2022
 *
-* cette partie gere la saisie manuelle de la cle de chiffrement et des chemins vers les fichiers clair et chiffre :
+*     cette partie gere la saisie manuelle
+     - de la cle de chiffrement
+     - des chemins vers les fichiers clair et chiffre :
 *
 */
 

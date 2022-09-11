@@ -117,6 +117,30 @@ void infos_messages()
 }
 
 /**
+* \fn int get_choose_for_menu()
+* \brief Fonction permettant la saisie du choix pour le menu
+*
+* \return menu : le choix du menu allant de 0 a 8
+*/
+int get_choose_for_menu()
+{
+     char res = 'S';
+     int menu = -1;
+	 do{
+        infos_messages();
+        scanf("%d",&menu);
+        res = check_value(menu);
+        if(res == 'K')
+        {
+            printf("\nVotre choix (%d) n'est pas correct, veuillez recommencer !!! \n",menu);
+            continue;
+        }
+	 }while(res == 'K');
+	 printf("\n");
+     return menu;
+}
+
+/**
 * \fn int menu(const char *min, const char *maj, int argc, char **argv)
 * \brief Fonction permettant de gérer le menu par l'utilisateur
 *
@@ -132,47 +156,37 @@ int menu(const char *min, const char *maj, int argc, char **argv)
 	int menu = -1;
     do
     {
-    	    menu = -1;
-    	    infos_messages();
-            scanf("%d",&menu);
-       	    if(check_value(menu) == 'K')
-			{
-				printf("\nVotre choix (%d) n'est pas correct, veuillez recommencer !!! \n",menu);
-				continue;
-			}
-       	    printf("\n");
-
-       	    switch(menu)
-       		{
-				case 0 :
-				    printf("\nFin execution du programme de cryptage de donnees \n");
-					break;
-				case 1 :
-					crypt_containt_file(min, maj, pathFileNameTexte, pathFileNameCypherKey, pathFileNameCypher);
-					break;
-				case 2 :
-					decrypt_containt_file(min, maj, pathFileNameTexte, pathFileNameCypherKey, pathFileNameCypher);
-					break;
-                case 3:
-                    saisie_cle_chiffrement(min, maj, pathFileNameTexte, pathFileNameCypher);
-                    break;
-                case 4:
-                    saisie_cle_dechiffrement(min, maj, pathFileNameTexte, pathFileNameCypher);
-                    break;
-                case 5:
-                    saisie_fichiers_chiffrement(min, maj);
-                    break;
-                  case 6:
-                    saisie_fichiers_dechiffrement(min, maj);
-                    break;
-                 case 7:
-					delete_file_source(pathFileNameTexte);
-					break;
-                case 8:
-					demo(min, maj);
-					break;
-       		}
-    	}while (menu!=0);
-		printf("Sortie du programme \n");
-		return 0;
+        switch(menu = get_choose_for_menu())
+       	{
+        case 0 :
+        	printf("\nFin execution du programme de cryptage de donnees \n");
+        	break;
+        case 1 :
+        	crypt_containt_file(min, maj, pathFileNameTexte, pathFileNameCypherKey, pathFileNameCypher);
+        	break;
+        case 2 :
+        	decrypt_containt_file(min, maj, pathFileNameTexte, pathFileNameCypherKey, pathFileNameCypher);
+        	break;
+        case 3:
+        	saisie_cle_chiffrement(min, maj, pathFileNameTexte, pathFileNameCypher);
+        	break;
+        case 4:
+        	saisie_cle_dechiffrement(min, maj, pathFileNameTexte, pathFileNameCypher);
+        	break;
+        case 5:
+        	saisie_fichiers_chiffrement(min, maj);
+        	break;
+        case 6:
+        	saisie_fichiers_dechiffrement(min, maj);
+        	break;
+        case 7:
+        	delete_file_source(pathFileNameTexte);
+        	break;
+        case 8:
+        	demo(min, maj);
+        	break;
+       	}
+    }while (menu!=0);
+    printf("Sortie du programme \n");
+    return 0;
 }

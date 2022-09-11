@@ -63,9 +63,10 @@ void saisie_fichiers_dechiffrement(const char * min, const char * maj);
 
 void infos_messages();
 
-
 int length(char * str);
 
 void string_copy(char *src, char * dest);
+
+int get_choose_for_menu();
 
 #endif
