@@ -8,8 +8,8 @@
 #ifndef FILE_H
 #define FILE_H
 
-    char pathFileNameTexte[50]     = "F:/DOSSIER_TEST/source.txt";
-    char pathFileNameCypherKey[50] = "F:/DOSSIER_TEST/peroq.def";
-    char pathFileNameCypher[50]    = "F:/DOSSIER_TEST/dest.crt";
+    char pathFileNameTexte[50]     = "C:/EXO_C/FILES_SECURITE/source.txt";
+    char pathFileNameCypherKey[50] = "C:/EXO_C/FILES_SECURITE/peroq.def";
+    char pathFileNameCypher[50]    = "C:/EXO_C/FILES_SECURITE/dest.crt";
 
 #endif

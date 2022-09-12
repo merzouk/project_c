@@ -109,6 +109,7 @@ void cryptage(const char *min, const char *maj, const char *pathFileNameTexte, c
    cypher_key = read_source_from_file(pathFileNameCypherKey);
    char * cypher = encrypt_source(clair, cypher_key, min, maj);
    write_cypher_in_file(cypher, pathFileNameCypher);
+   free(cypher);
 }
 
 /**
@@ -127,6 +128,7 @@ void cryptage_saisie_cle(const char *min, const char *maj, const char *pathFileN
     clair = read_source_from_file(pathFileNameTexte);
 	char * cypher = encrypt_source(clair, cypher_key, min, maj);
     write_cypher_in_file(cypher, pathFileNameCypher);
+	free(cypher);
 }
 
 /**

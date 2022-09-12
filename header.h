@@ -27,8 +27,6 @@ void decryptage(const char *min, const char *maj, const char *pathFileNameTexte,
 
 char check_value(int choose);
 
-int menu(const char *min, const char *maj, int argc, char **argv);
-
 char * choose_cypher_key(int choose);
 
 char *alloc_memory(int size);
@@ -65,8 +63,14 @@ void infos_messages();
 
 int length(char * str);
 
+char * str_copy(char *src, char * dest);
+
 void string_copy(char *src, char * dest);
 
 int get_choose_for_menu();
+
+int launch_menu(const char *min, const char *maj, int argc, char **argv);
+
+int menu(const char *min, const char *maj, const char *pathFileNameTexte, const char * pathFileNameCypher, const char * pathFileNameCypherKey);
 
 #endif

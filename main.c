@@ -36,6 +36,6 @@
 
 int main(int argc, char **argv)
 {
-    menu(min, maj, argc, argv);
+    launch_menu(min, maj, argc, argv);
     return 0;
 }

@@ -21,12 +21,6 @@
 #include "header.h"
 #include "file.h"
 
-/**
-* \fn void mmenu (void)
-* \brief Entrée de la gestion du menu principal.
-*
-*/
-
 
 /**
 * \fn char check_value(int choose)
@@ -42,57 +36,6 @@ char check_value(int choose)
 		return 'O';
 	}
 	return 'K';
-}
-
-/**
-* \fn int length(char * str)
-* \brief Fonction permettant de calculer la logueur de la chaine de caracteres
-*
-* \param[in] str : chaine de caracteres
-* \return int : longueur de la chaine
-*/
-int length(char * str)
-{
-    if(!str) return 0;
-    int length = 0;
-    while(*(str + length) != '\0') length++;
-    return length;
-}
-
-/**
-* \fn void string_copy(char *src, char * dest)
-* \brief Fonction permettant de copier le contenu de la chaine src vers la chaine dest
-*
-* \param[in] src : chaine de caracteres a copier
-* \param[in] dest : chaine de caracteres ver laquelle on copie le contenu de la chaine src
-* \return void : sans retour
-*/
-void string_copy(char *src, char * dest)
-{
-    int length_dst = length(dest);
-    if(length_dst == 0)
-    {
-        int i = 0;
-		int j = length_dst;
-        while (*(src + i))
-		{
-            *(dest + j) = *(src + i);
-			i++;
-			j++;
-        }
-        *(dest + j) = '\0';
-    }
-    else
-    {
-        int i = 0;
-        int j = length_dst;
-        while (*(src + i )) {
-            *(dest + j) = *(src + i);
-            i++;
-            j++;
-        }
-        *(dest + j) = '\0';
-    }
 }
 
 /**
@@ -141,19 +84,21 @@ int get_choose_for_menu()
 }
 
 /**
-* \fn int menu(const char *min, const char *maj, int argc, char **argv)
+* \fn int launch_menu(const char *min, const char *maj, const char *pathFileNameTexte, const char * pathFileNameCypherKey, const char * pathFileNameCypherKey)
 * \brief Fonction permettant de gérer le menu par l'utilisateur
 *
 * \param[in] min : alphabet au miniscule
 * \param[in] maj : alphabet au format majiscule
-* \param[in] argc : le nombre d'arguments fournis a l'entree du programme
-* \param[in] argv : la liste des arguments fournis a l'entree du programme
+* \param[in] pathFileNameTexte : le chemin vers le fichier contenant le texte clair
+* \param[in] pathFileNameCypher : le chemin vers le fichier contenant le texte chiffre
+* \param[in] pathFileNameCypherKey : le chemin vers le fichier contenant le texte de la cle de chiffrement
 * \return 0 : Sortie normal du programme.
 * \return 1 : Sortie en erreur du programme
 */
-int menu(const char *min, const char *maj, int argc, char **argv)
+int menu(const char *min, const char *maj, const char *pathFileNameTexte, const char * pathFileNameCypher, const char * pathFileNameCypherKey)
 {
-	int menu = -1;
+    int menu = -1;
+    printf("%s %s %s", pathFileNameTexte, pathFileNameCypher, pathFileNameCypherKey);
     do
     {
         switch(menu = get_choose_for_menu())
@@ -189,4 +134,36 @@ int menu(const char *min, const char *maj, int argc, char **argv)
     }while (menu!=0);
     printf("Sortie du programme \n");
     return 0;
+
+}
+
+/**
+* \fn int menu(const char *min, const char *maj, int argc, char **argv)
+* \brief Fonction permettant de lancer le menu, si les donnees sont fournies en ligne de commande, elles seront utilisees, sinon on utilise celles du fichier file.h
+*        Dans le premier cas les arguments sont mis dans l'ordre suivant :
+         - 1 : le nom de l'executable
+         - 2 : le chemin vers le fichier contenant le texte clair
+         - 3 : le chemin vers le fichier contenant le texte chiffre
+         - 4 : le chemin vers le fichier contenant le texte de la cle de chiffrement/dechiffrement
+*
+* \param[in] min : alphabet au miniscule
+* \param[in] maj : alphabet au format majiscule
+* \param[in] argc : le nombre d'arguments fournis a l'entree du programme
+* \param[in] argv : la liste des arguments fournis a l'entree du programme
+* \return 0 : Sortie normal du programme.
+* \return 1 : Sortie en erreur du programme
+*/
+int launch_menu(const char *min, const char *maj, int argc, char **argv)
+{
+	if(argc == 4)
+    {
+        const char * pathFileTxt       = *(argv + 1);
+        const char * pathFileCypher    = *(argv + 2);
+        const char * pathFileCypherKey = *(argv + 3);
+        return menu(min, maj, pathFileTxt, pathFileCypher, pathFileCypherKey);
+    }
+    else
+    {
+        return menu(min, maj, pathFileNameTexte, pathFileNameCypher, pathFileNameCypherKey);
+    }
 }

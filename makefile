@@ -2,17 +2,19 @@
 
 OS=linux
 
-ifeq ($(OS), linux)
-	DELETE=rm
-else
-	DELETE=del
-endif
-
 CC = gcc -g -Wall -ansi -pedantic -std=c99
 
-PROG=manage_cypher
+# PROG=manage_cypher
 ARCHIVE=sortie.zip
 TARGET_ARCHIVE=*.c *.h Makefile
+
+ifeq ($(OS), linux)
+	DELETE=rm
+	PROG=manage_cypher
+else
+	DELETE=del
+	PROG=manage_cypher.exe
+endif
 
 #Identifier tous les fichiers .c de mon programme
 SRC = $(wildcard *.c)
