@@ -1,4 +1,4 @@
-#Mon premier Makefile
+#Manage c Project by Makefile
 
 OS=linux
 
