@@ -22,8 +22,8 @@
 *
 */
 
-#include "header.h"
-#include "ressources.h"
+#include "../header/header.h"
+#include "../header/ressources.h"
 
 /**
 * \fn int main (void)

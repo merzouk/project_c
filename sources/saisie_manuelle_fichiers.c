@@ -11,7 +11,7 @@
 *
 */
 
-#include "header.h"
+#include "../header/header.h"
 
 /**
 * \fn void saisie_cle_chiffrement(const char * min, const char * maj);

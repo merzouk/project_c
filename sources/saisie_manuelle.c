@@ -9,7 +9,7 @@
     - la saisie manuelle de la cle de chiffrement et de dechiffrement
 */
 
-#include "header.h"
+#include "../header/header.h"
 
 /**
 * \fn void saisie_cle_chiffrement(const char * min, const char * maj, const char *pathFileNameTexte,  const char *pathFileNameCypher)

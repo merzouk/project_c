@@ -11,7 +11,7 @@
 *
 */
 
-#include "header.h"
+#include "../header/header.h"
 
 /**
 * \fn int get_rang_maj(char c)

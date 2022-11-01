@@ -10,7 +10,7 @@
 *
 */
 
-#include "header.h"
+#include "../header/header.h"
 
 /**
 * \fn char *alloc_memory(int size)

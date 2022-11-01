@@ -11,7 +11,7 @@
 *
 */
 
-#include "header.h"
+#include "../header/header.h"
 
 /**
 * \fn char * read_source_from_file(char *pathFileName)

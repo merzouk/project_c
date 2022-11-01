@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../header/header.h"
 
 /**
 * \fn int length(char * str)
