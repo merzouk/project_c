@@ -127,3 +127,6 @@ Les développements et les tests sont réalisés en totalité sous codeBlocks so
 
 Les tests en ligne de commande sont réalisés sur Debian 11
 ```
+
+# La console du programme
+
