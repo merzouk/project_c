@@ -130,3 +130,4 @@ Les tests en ligne de commande sont réalisés sur Debian 11
 
 # La console du programme
 
+![My Image](./pictures/demo.jpg)
