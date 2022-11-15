@@ -38,7 +38,7 @@ Perroquet : abcd
 
 # Résultat en calcul ascii : 
 
-```
+```c++
 (‘O’-‘a’)(‘l’-‘b’)(‘i’-‘c’)(‘v’-‘d’)(‘i’-‘a’)(‘e’-‘b’)(‘r’-‘c’)
 ```
 
