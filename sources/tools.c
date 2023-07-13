@@ -63,7 +63,7 @@ void string_copy(char *src, char * dest)
         int i = 0;
 		int j = length_dst;
         while (*(src + i))
-		{
+	{
             *(dest + j) = *(src + i);
 			i++;
 			j++;
@@ -74,7 +74,8 @@ void string_copy(char *src, char * dest)
     {
         int i = 0;
         int j = length_dst;
-        while (*(src + i )) {
+        while (*(src + i )) 
+	{
             *(dest + j) = *(src + i);
             i++;
             j++;
