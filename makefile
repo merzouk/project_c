@@ -6,7 +6,7 @@ CC = gcc -g -Wall -ansi -pedantic -std=c99
 
 # PROG=manage_cypher
 ARCHIVE=sortie.zip
-TARGET_ARCHIVE=sources/*.c header/*.h Makefile
+TARGET_ARCHIVE=sources/*.c header/*.h makefile
 
 ifeq ($(OS), linux)
 	DELETE=rm
