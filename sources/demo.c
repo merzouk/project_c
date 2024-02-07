@@ -20,7 +20,7 @@
 */
 void demo(char *min, char *maj)
 {
-    printf("\n=================== Demo ========================\n");
+    printf("\n=================== Debut Demo ========================\n");
 
     printf("\n=================== Exemple 1 ========================\n");
 	char * source = "Hello tout le monde !";
