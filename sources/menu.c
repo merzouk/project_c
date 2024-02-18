@@ -134,7 +134,6 @@ int menu(const char *min, const char *maj, const char *pathFileNameTexte, const 
     }while (menu!=0);
     printf("Sortie du programme \n");
     return 0;
-
 }
 
 /**
